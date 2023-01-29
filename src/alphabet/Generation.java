@@ -3,9 +3,11 @@ import java.util.LinkedList;
 
 public class Generation {
 	public LinkedList<MembreAlpha> base;
+	public static int countGene=0;
 	
 	public Generation(LinkedList<MembreAlpha> base) {
 		this.base=base;
+		countGene++;
 	}
 	public Generation nextGeneration() {
 		LinkedList<MembreAlpha> prochain = new LinkedList<MembreAlpha>();
@@ -31,6 +33,7 @@ public class Generation {
 		for(MembreAlpha symbole : this.nextGeneration().getBase()) {
 			chaine+=symbole.toString()+" ";
 		}
+		//countGene++;
 		return this.toString()+"\n"+ chaine+"]";
 	}
 	public LinkedList<MembreAlpha> getBase() {
@@ -38,5 +41,8 @@ public class Generation {
 	}
 	public void setBase(LinkedList<MembreAlpha> base) {
 		this.base = base;
+	}
+	public static int getCountGen() {
+		return countGene/2;
 	}
 }

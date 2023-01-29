@@ -21,10 +21,12 @@ public class Main {
 		AutreevoluerTest.add(ava);
 		effe.setEvolution(AutreevoluerTest);
 		Generation generat=new Generation(testGene);
-		for(int i=0;i<6;i++) {
+		for(int i=0;i<360;i++) {
 			
 			System.out.println(generat.representationNext());
+			System.out.println(Generation.getCountGen());
 			generat = generat.nextGeneration();
+			
 		}
 		
 
