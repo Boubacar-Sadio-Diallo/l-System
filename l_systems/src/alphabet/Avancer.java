@@ -2,9 +2,11 @@ package alphabet;
 
 public class MembreAlpha {
 	private char representation;
+	private Evolution evolution;
 
-	public MembreAlpha(char representation) {
+	public MembreAlpha(char representation, Evolution evolution) {
 		this.representation = representation;
+		this.evolution=evolution;
 	}
 
 	public char getRepresentation() {
