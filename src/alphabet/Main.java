@@ -4,22 +4,19 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		MembreAlpha effe = new MembreAlpha('F');
+		MembreAlpha effe = new MembreAlpha('A');
 		//System.out.println(effe);
 		//System.out.println(effe.getEvolution());
 		LinkedList<MembreAlpha> evoluerTest=new LinkedList<MembreAlpha>();
 		evoluerTest.add(effe);
-		MembreAlpha ava = new Avancer('A',evoluerTest,4);
+		MembreAlpha ava = new Avancer('B',evoluerTest,4);
 		//System.out.println(ava);
 		//System.out.println(ava.getEvolution());
 		//MembreAlpha zed =new MembreAlpha('Z');
 		//MembreAlpha be =new MembreAlpha()
 		LinkedList<MembreAlpha> testGene = new LinkedList<MembreAlpha>();
 		testGene.add(effe);
-		testGene.add(ava);
 		LinkedList<MembreAlpha> AutreevoluerTest=new LinkedList<MembreAlpha>();
-		AutreevoluerTest.add(ava);
-		AutreevoluerTest.add(ava);
 		AutreevoluerTest.add(effe);
 		AutreevoluerTest.add(ava);
 		effe.setEvolution(AutreevoluerTest);
