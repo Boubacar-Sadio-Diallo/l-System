@@ -17,6 +17,23 @@ public class Evolution {
 		this.devient.add(this.membre);
 	}
 	
+	
+	public MembreAlpha getMembre() {
+		return membre;
+	}
+
+	public void setMembre(MembreAlpha membre) {
+		this.membre = membre;
+	}
+
+	public LinkedList<MembreAlpha> getDevient() {
+		return devient;
+	}
+
+	public void setDevient(LinkedList<MembreAlpha> devient) {
+		this.devient = devient;
+	}
+
 	@Override
 	public String toString() {
 		String chaine="[";
