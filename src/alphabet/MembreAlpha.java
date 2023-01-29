@@ -1,16 +1,18 @@
 package alphabet;
+import java.util.LinkedList;
 
 public class MembreAlpha {
 	protected char representation;
-	protected Evolution evolution;
+	protected LinkedList<MembreAlpha> evolution;
 
-	public MembreAlpha(char representation, Evolution evolution) {
+	public MembreAlpha(char representation, LinkedList<MembreAlpha> evolution) {
 		this.representation = representation;
 		this.evolution=evolution;
 	}
 	public MembreAlpha(char representation) {
 		this.representation = representation;
-		this.evolution=new Evolution(this);
+		this.evolution=new LinkedList<MembreAlpha>();
+		this.evolution.add(this);
 	}
 
 	public char getRepresentation() {
@@ -22,11 +24,11 @@ public class MembreAlpha {
 	}
 	
 
-	public Evolution getEvolution() {
+	public LinkedList<MembreAlpha> getEvolution() {
 		return evolution;
 	}
 
-	public void setEvolution(Evolution evolution) {
+	public void setEvolution (LinkedList<MembreAlpha> evolution) {
 		this.evolution = evolution;
 	}
 

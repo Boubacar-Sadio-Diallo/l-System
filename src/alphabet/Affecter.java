@@ -1,8 +1,10 @@
 package alphabet;
+import java.util.LinkedList;
+
 
 public abstract class Affecter extends MembreAlpha {
 	protected int valeur;
-	public Affecter(char representation, Evolution evolution ,int valeur) {
+	public Affecter(char representation, LinkedList<MembreAlpha> evolution ,int valeur) {
 		super(representation,evolution);
 		this.valeur=valeur;
 	}

@@ -7,11 +7,36 @@ public class Generation {
 	public Generation(LinkedList<MembreAlpha> base) {
 		this.base=base;
 	}
-	public LinkedList<MembreAlpha> nextGeneration() {
+	public Generation nextGeneration() {
 		LinkedList<MembreAlpha> prochain = new LinkedList<MembreAlpha>();
 		for(MembreAlpha membre : this.base) {
-			prochain.addAll(membre.evolution.getDevient());
+			prochain.addAll(membre.getEvolution());
 		}
-		return prochain;
+		Generation genSuiv=new Generation(prochain);
+		return genSuiv;
+	}
+	
+	
+	@Override
+	public String toString() {
+		String chaine="[";
+		for (MembreAlpha symbole : this.base) {
+			chaine+=symbole.toString()+" ";
+		}
+		return chaine+"]";
+	}
+	
+	public String representationNext() {
+		String chaine="[";
+		for(MembreAlpha symbole : this.nextGeneration().getBase()) {
+			chaine+=symbole.toString()+" ";
+		}
+		return this.toString()+"\n"+ chaine+"]";
+	}
+	public LinkedList<MembreAlpha> getBase() {
+		return base;
+	}
+	public void setBase(LinkedList<MembreAlpha> base) {
+		this.base = base;
 	}
 }
