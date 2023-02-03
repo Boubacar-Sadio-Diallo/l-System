@@ -8,6 +8,10 @@ public abstract class Affecter extends MembreAlpha {
 		super(representation,evolution);
 		this.valeur=valeur;
 	}
+	public Affecter(char representation, int valeur) {
+		super(representation);
+		this.valeur=valeur;
+	}
 	public int getValeur() {
 		return valeur;
 	}
