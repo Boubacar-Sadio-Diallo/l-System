@@ -1,9 +1,19 @@
 package alphabet;
 
-public class SauverPosition extends MembreAlpha{
+import java.util.LinkedList;
 
+public class SauverPosition extends MembreAlpha{
+	
+	private static final char REPRESENTATION_BASE='[';
+	
+	public SauverPosition(char representation, LinkedList<MembreAlpha> evolution) {
+		super(representation,evolution);
+	}
+	public SauverPosition(char representation) {
+		super(representation);
+	}
 	public SauverPosition() {
-		// TODO Auto-generated constructor stub
+		this(REPRESENTATION_BASE);
 	}
 
 }

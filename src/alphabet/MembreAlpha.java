@@ -2,24 +2,24 @@ package alphabet;
 import java.util.LinkedList;
 
 public class MembreAlpha {
-	protected char representation;
+	protected Character representation;
 	protected LinkedList<MembreAlpha> evolution;
 
-	public MembreAlpha(char representation, LinkedList<MembreAlpha> evolution) {
+	public MembreAlpha(Character representation, LinkedList<MembreAlpha> evolution) {
 		this.representation = representation;
 		this.evolution=evolution;
 	}
-	public MembreAlpha(char representation) {
+	public MembreAlpha(Character representation) {
 		this.representation = representation;
 		this.evolution=new LinkedList<MembreAlpha>();
 		this.evolution.add(this);
 	}
 
-	public char getRepresentation() {
+	public Character getRepresentation() {
 		return representation;
 	}
 
-	public void setRepresentation(char representation) {
+	public void setRepresentation(Character representation) {
 		this.representation = representation;
 	}
 	

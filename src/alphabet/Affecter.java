@@ -3,19 +3,21 @@ import java.util.LinkedList;
 
 
 public abstract class Affecter extends MembreAlpha {
-	protected int valeur;
-	public Affecter(char representation, LinkedList<MembreAlpha> evolution ,int valeur) {
+	protected double valeur;
+	protected boolean dessine;
+	public Affecter(Character representation, LinkedList<MembreAlpha> evolution ,double valeur) {
 		super(representation,evolution);
 		this.valeur=valeur;
+		this.dessine=false;
 	}
-	public Affecter(char representation, int valeur) {
+	public Affecter(Character representation, double valeur) {
 		super(representation);
 		this.valeur=valeur;
 	}
-	public int getValeur() {
+	public double getValeur() {
 		return valeur;
 	}
-	public void setValeur(int valeur) {
+	public void setValeur(double valeur) {
 		this.valeur = valeur;
 	}
 	
