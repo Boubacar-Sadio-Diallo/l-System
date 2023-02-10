@@ -12,22 +12,36 @@ public class Tortue {
 	public HashMap<Character,MembreAlpha> alphabetMap;
 	
 
-	public Tortue(HashMap<Character,MembreAlpha> alphabetMap) {
+	/*public Tortue(HashMap<Character,MembreAlpha> alphabetMap) {
 		this.abscisse=0.0;
 		this.ordonnee=0.0;
 		this.angle=90;
 		this.dessine=false;
 		this.alphabetMap=alphabetMap;
+	}*/
+	
+	public Tortue(HashMap<Character,MembreAlpha> alphabetMap) {
+		this();
+		this.alphabetMap=alphabetMap;
 	}
-	public Tortue(ArrayList<MembreAlpha> alphabet) {
+	
+	/*public Tortue(ArrayList<MembreAlpha> alphabet) {
 		HashMap<Character,MembreAlpha> alphabetMap2= new HashMap<Character,MembreAlpha>();
 		for (MembreAlpha alpha : alphabet) {
 			alphabetMap2.put(alpha.getRepresentation(),alpha);
 		}
 		this(alphabetMap2);
+	}*/
+	public Tortue(ArrayList<MembreAlpha> alphabet) {
+		this();
+		HashMap<Character,MembreAlpha> alphabetMap2= new HashMap<Character,MembreAlpha>();
+		for (MembreAlpha alpha : alphabet) {
+			alphabetMap2.put(alpha.getRepresentation(),alpha);
+		}
+		this.alphabetMap=alphabetMap2;
 	}
 
-	public Tortue() {
+/*	public Tortue() {
 		ArrayList<MembreAlpha> alphabet= new ArrayList<MembreAlpha>();
 		Avancer avancer = new Avancer();
 		DessinerAvancer dessinerAvancer =new DessinerAvancer();
@@ -46,6 +60,34 @@ public class Tortue {
 		alphabet.add(tournerTrigo);
 		alphabet.add(tournerHoraire);
 		this(alphabet);
+	}*/
+	public Tortue() {
+		this.abscisse=0.0;
+		this.ordonnee=0.0;
+		this.angle=90;
+		this.dessine=false;
+		ArrayList<MembreAlpha> alphabet= new ArrayList<MembreAlpha>();
+		Avancer avancer = new Avancer();
+		DessinerAvancer dessinerAvancer =new DessinerAvancer();
+		MembreAlpha membrealpha1=new MembreAlpha('A');
+		MembreAlpha membrealpha2=new MembreAlpha('B');
+		SauverPosition sauver = new SauverPosition();
+		RestaurerPosition restaurer = new RestaurerPosition();
+		TournerSensTrigo tournerTrigo = new TournerSensTrigo();
+		TournerSensHoraire tournerHoraire = new TournerSensHoraire();
+		alphabet.add(avancer);
+		alphabet.add(dessinerAvancer);
+		alphabet.add(membrealpha1);
+		alphabet.add(membrealpha2);
+		alphabet.add(sauver);
+		alphabet.add(restaurer);
+		alphabet.add(tournerTrigo);
+		alphabet.add(tournerHoraire);
+		HashMap<Character,MembreAlpha> alphabetMap2= new HashMap<Character,MembreAlpha>();
+		for (MembreAlpha alpha : alphabet) {
+			alphabetMap2.put(alpha.getRepresentation(),alpha);
+		}
+		this.alphabetMap=alphabetMap2;
 	}
 	
 	public double getAbscisse() {
