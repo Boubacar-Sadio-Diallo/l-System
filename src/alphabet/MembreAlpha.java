@@ -4,14 +4,15 @@ import java.util.LinkedList;
 public class MembreAlpha {
 	protected Character representation;
 	protected LinkedList<MembreAlpha> evolution;
+	protected boolean dessine;
 
 	public MembreAlpha(Character representation, LinkedList<MembreAlpha> evolution) {
 		this.representation = representation;
 		this.evolution=evolution;
+		this.dessine=false;
 	}
 	public MembreAlpha(Character representation) {
-		this.representation = representation;
-		this.evolution=new LinkedList<MembreAlpha>();
+		this(representation,new LinkedList<MembreAlpha>());
 		this.evolution.add(this);
 	}
 
@@ -24,6 +25,12 @@ public class MembreAlpha {
 	}
 	
 
+	public boolean isDessine() {
+		return dessine;
+	}
+	public void setDessine(boolean dessine) {
+		this.dessine = dessine;
+	}
 	public LinkedList<MembreAlpha> getEvolution() {
 		return evolution;
 	}

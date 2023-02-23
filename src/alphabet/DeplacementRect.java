@@ -2,15 +2,15 @@ package alphabet;
 import java.util.LinkedList;
 
 
-public abstract class Affecter extends MembreAlpha {
+public abstract class DeplacementRect extends MembreAlpha {
 	protected double valeur;
 	protected boolean dessine;
-	public Affecter(Character representation, LinkedList<MembreAlpha> evolution ,double valeur) {
+	public DeplacementRect(Character representation, LinkedList<MembreAlpha> evolution ,double valeur) {
 		super(representation,evolution);
 		this.valeur=valeur;
 		this.dessine=false;
 	}
-	public Affecter(Character representation, double valeur) {
+	public DeplacementRect(Character representation, double valeur) {
 		super(representation);
 		this.valeur=valeur;
 	}

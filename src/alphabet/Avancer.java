@@ -1,7 +1,7 @@
 package alphabet;
 import java.util.LinkedList;
 
-public class Avancer extends Affecter {
+public class Avancer extends DeplacementRect {
 	private static final Character REPRESENTATION_BASE='f';
 	private static final double VALEUR_BASE=10;
 	

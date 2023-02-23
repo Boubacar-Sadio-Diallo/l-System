@@ -2,7 +2,7 @@ package alphabet;
 
 import java.util.LinkedList;
 
-public class DessinerAvancer extends Affecter {
+public class DessinerAvancer extends DeplacementRect {
 	private static final Character REPRESENTATION_BASE='F';
 	private static final double VALEUR_BASE=10;
 	
