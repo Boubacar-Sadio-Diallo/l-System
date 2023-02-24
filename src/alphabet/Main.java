@@ -23,7 +23,7 @@ public class Main {
 		AutreevoluerTest.add(ava);
 		effe.setEvolution(AutreevoluerTest);
 		Generation generat=new Generation(testGene);
-		for(int i=0;i<20;i++) {
+		for(int i=0;i<3;i++) {
 			System.out.println(generat.representationNext()+"\n");
 			System.out.println(Generation.getCountGen());
 			generat = generat.nextGeneration();

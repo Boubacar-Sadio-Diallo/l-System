@@ -23,21 +23,29 @@ public class Tortue {
 	public void dessinAutorisation(MembreAlpha lettre) {
 		this.dessine=lettre.isDessine();
 	}
-	public void avancer(DeplacementRect lettre) {
+	public void avancer(Mouvement lettre) {
 		this.dessinAutorisation(lettre);
 		if(this.dessine) {
 			double abscisseAvant=this.abscisse;
 			double ordoAvant=this.ordonnee;
-		}
-		this.abscisse=this.abscisse+lettre.getValeur()*Math.cos(Math.toRadians(this.angle));
-		this.ordonnee=this.ordonnee+lettre.getValeur()*Math.sin(Math.toRadians(this.angle));
-		if(this.dessine) {
-			//dessin
-		}
+			this.abscisse=this.abscisse+lettre.getValeur()*Math.cos(Math.toRadians(this.angle));
+			this.ordonnee=this.ordonnee+lettre.getValeur()*Math.sin(Math.toRadians(this.angle));
+			this.dessine(abscisseAvant,this.abscisse,ordoAvant,this.ordonnee);
+		} else 
+			return;
+
 
 	}
-	
-
+	public void dessine(double x1,double x2, double y1,double y2) {
+		//appel dessin pour la vue
+		return;
+	}
+	public void tourner(Mouvement lettre) {
+		if(lettre instanceof TournerSensHoraire || lettre instanceof TournerSensTrigo) {
+			this.angle+=lettre.getValeur();
+		} else
+			return;
+	}
 	
 	
 }

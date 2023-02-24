@@ -1,7 +1,7 @@
 package alphabet;
 import java.util.LinkedList;
 
-public class TournerSensTrigo extends DeplacementRect {
+public class TournerSensTrigo extends Mouvement {
 	private static final Character REPRESENTATION_BASE='+';
 	private static final double VALEUR_BASE=90;
 	

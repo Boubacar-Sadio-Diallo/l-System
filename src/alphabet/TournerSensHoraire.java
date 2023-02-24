@@ -1,7 +1,7 @@
 package alphabet;
 import java.util.LinkedList;
 
-public class TournerSensHoraire extends DeplacementRect {
+public class TournerSensHoraire extends Mouvement {
 	private static final Character REPRESENTATION_BASE='-';
 	private static final double VALEUR_BASE=90;
 	
