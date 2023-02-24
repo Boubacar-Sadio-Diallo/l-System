@@ -1,5 +1,6 @@
 package alphabet;
 import java.util.LinkedList;
+import tortue.Tortue;
 public class Main {
 
 	public static void main(String[] args) {
@@ -29,6 +30,9 @@ public class Main {
 			generat = generat.nextGeneration();
 			
 		}
+		double x =4.4;
+		System.out.println(x);
+		System.out.println((int)x);
 		
 
 	}

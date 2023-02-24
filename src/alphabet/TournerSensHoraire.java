@@ -7,9 +7,11 @@ public class TournerSensHoraire extends Mouvement {
 	
 	public TournerSensHoraire(Character representation, LinkedList<MembreAlpha> evolution ,double valeur)  {
 		super(representation,evolution,valeur);
+		this.tourne=true;
 	}
 	public TournerSensHoraire(Character representation, double valeur) {
 		super(representation,valeur);
+		this.tourne=true;
 	}
 	public TournerSensHoraire() {
 		this(REPRESENTATION_BASE,VALEUR_BASE);

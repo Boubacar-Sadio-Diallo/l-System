@@ -7,9 +7,11 @@ public class TournerSensTrigo extends Mouvement {
 	
 	public TournerSensTrigo(Character representation, LinkedList<MembreAlpha> evolution ,double valeur)  {
 		super(representation,evolution,valeur);
+		this.tourne=true;
 	}
 	public TournerSensTrigo(Character representation, double valeur) {
 		super(representation,valeur);
+		this.tourne=true;
 	}
 	public TournerSensTrigo() {
 		this(REPRESENTATION_BASE,VALEUR_BASE);

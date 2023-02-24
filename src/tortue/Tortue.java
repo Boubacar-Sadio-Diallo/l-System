@@ -33,20 +33,19 @@ public class Tortue {
 			this.dessine(abscisseAvant,this.abscisse,ordoAvant,this.ordonnee);
 		} else 
 			return;
-
-
 	}
 	public void dessine(double x1,double x2, double y1,double y2) {
 		//appel dessin pour la vue
 		return;
 	}
 	public void tourner(Mouvement lettre) {
-		if(lettre instanceof TournerSensHoraire || lettre instanceof TournerSensTrigo) {
+		if(lettre.isTourne())
 			this.angle+=lettre.getValeur();
-		} else
+		else
 			return;
 	}
 	
+	//Le symbole doit implémenter la fonction seDessiner(Tortue t) abstarct void t.avancerentracant() 
 	
 }
 	
@@ -151,7 +150,7 @@ public class Tortue {
 		this.alphabetMap = alphabetMap;
 	}
 	public void getCoordonnees() {
-		System.out.println("("+this.getAbscisse()+","+this.getOrdonnee()+")");
+		System.out.prdoubleln("("+this.getAbscisse()+","+this.getOrdonnee()+")");
 	}
 	public void setCoordonnees(double abscisse, double ordonnee) {
 		this.setAbscisse(abscisse);
