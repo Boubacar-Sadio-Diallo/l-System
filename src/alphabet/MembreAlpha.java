@@ -38,6 +38,14 @@ public class MembreAlpha {
 	public void setEvolution (LinkedList<MembreAlpha> evolution) {
 		this.evolution = evolution;
 	}
+	public void setEvolution (MembreAlpha membreEvolution) {
+		LinkedList<MembreAlpha> evolution2 = new LinkedList<MembreAlpha>();
+		this.evolution=evolution2;
+	}
+	public void addEvolution(MembreAlpha membreEvolution) {
+		this.evolution.add(membreEvolution);
+	}
+	
 
 	@Override
 	public String toString() {

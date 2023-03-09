@@ -21,20 +21,20 @@ public class Generation {
 	
 	@Override
 	public String toString() {
-		String chaine="[";
+		String chaine="::";
 		for (MembreAlpha symbole : this.base) {
 			chaine+=symbole.toString()+" ";
 		}
-		return chaine+"]";
+		return chaine+"::";
 	}
 	
 	public String representationNext() {
-		String chaine="[";
+		String chaine="::";
 		for(MembreAlpha symbole : this.nextGeneration().getBase()) {
 			chaine+=symbole.toString()+" ";
 		}
 		//countGene++;
-		return this.toString()+"\n"+ chaine+"]";
+		return this.toString()+"\n"+ chaine+"::";
 	}
 	public LinkedList<MembreAlpha> getBase() {
 		return base;
