@@ -4,14 +4,14 @@ import java.util.LinkedList;
 public class LSystem {
 	
 	private LinkedList<MembreAlpha> developpement;
-	private double angle;
+	private int angle;
 	private HashMap<Character,MembreAlpha> regles;
-	private int niveau;
+	private int niveauGeneration;
 
-	public LSystem(LinkedList<MembreAlpha> developpement, double angle){
+	public LSystem(LinkedList<MembreAlpha> developpement, int angle){
 		this.developpement = developpement;
 		this.angle = angle;
-		this.niveau=0;
+		this.niveauGeneration=0;
 		DessinerAvancer dessinerAvancer = new DessinerAvancer();
 		Avancer avancer =new Avancer();
 		RestaurerPosition restaturerPosition = new RestaurerPosition();
@@ -20,6 +20,7 @@ public class LSystem {
 		tournerSensHoraire.setValeur(angle);
 		TournerSensTrigo tournerSensTrigo = new TournerSensTrigo();
 		tournerSensTrigo.setValeur(angle);
+		this.regles  = new HashMap<Character,MembreAlpha>();
 		this.regles.put(dessinerAvancer.getRepresentation(), dessinerAvancer);
 		this.regles.put(avancer.getRepresentation(), avancer);
 		this.regles.put(restaturerPosition.getRepresentation(), restaturerPosition);
@@ -32,7 +33,7 @@ public class LSystem {
 		return developpement;
 	}
 
-	public double getAngle() {
+	public int getAngle() {
 		return angle;
 	}
 
@@ -40,11 +41,11 @@ public class LSystem {
 		return regles;
 	}
 
-	public int getNiveau() {
-		return niveau;
+	public int getniveauGeneration() {
+		return niveauGeneration;
 	}
 
-	public void setAngle(double angle) {
+	public void setAngle(int angle) {
 		this.angle = angle;
 	}
 
@@ -61,6 +62,7 @@ public class LSystem {
 
 	public void affecterNextGenToDev() {
 		this.developpement=this.nextGeneration();
+		this.niveauGeneration+=1;
 	}
 	
 	public void ajoutSymbole(Character character) {
@@ -80,7 +82,7 @@ public class LSystem {
 		this.regles.get(charSymbQuiDoitChanger).addEvolution(this.regles.get(charSymbAAjouter));
 	}
 	public String toString() {
-		String chaine="::";
+		String chaine="\n::";
 		for (MembreAlpha symbole : this.developpement) {
 			chaine+=symbole.toString()+" ";
 		}
@@ -92,9 +94,35 @@ public class LSystem {
 		for(MembreAlpha symbole : this.nextGeneration()) {
 			chaine+=symbole.toString()+" ";
 		}
-		//countGene++;
-		return this.toString()+"\n"+ chaine+"::";
+		return this.getniveauGeneration()+this.toString()+"\n"+ (this.getniveauGeneration()+1)+"\n"+chaine+"::";
 	}
+	
+	public void affecterNextGenToDevNFois(int n) {
+		this.nextGenerationNFois(n);
+		this.niveauGeneration+=n;
+		//this.developpement=nextGenerationNFois(n);
+	}
+	public LinkedList<MembreAlpha> nextGenerationNFois(int n) {
+		LinkedList<MembreAlpha> prochain = new LinkedList<MembreAlpha>();
+		LinkedList<MembreAlpha> copy = new LinkedList<MembreAlpha>();
+		copy.addAll(this.developpement);
+		for(int i=0;i<n;i++) {
+			for(MembreAlpha membre : copy) {
+				prochain.addAll(membre.getEvolution());
+			}
+		}
+		return prochain;
+	}
+	public String representationNextNFois(int n) {
+		String chaine="::";
+		for(MembreAlpha symbole : this.nextGenerationNFois(n)) {
+			chaine+=symbole.toString()+" ";
+		}
+		return "0"+this.toString()+"\n"+ (this.getniveauGeneration())+"\n"+chaine+"::";
+	}
+	
+	
+
 	
 	
 	

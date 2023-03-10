@@ -3,9 +3,9 @@ import java.util.LinkedList;
 
 
 public abstract class Mouvement extends MembreAlpha {
-	protected double valeur;
+	protected int valeur;
 	protected boolean tourne;
-	public Mouvement(Character representation, LinkedList<MembreAlpha> evolution ,double valeur) {
+	public Mouvement(Character representation, LinkedList<MembreAlpha> evolution ,int valeur) {
 		super(representation,evolution);
 		this.valeur=valeur;
 		this.dessine=false;
@@ -15,14 +15,14 @@ public abstract class Mouvement extends MembreAlpha {
 		return tourne;
 	}
 
-	public Mouvement(Character representation, double valeur) {
+	public Mouvement(Character representation, int valeur) {
 		super(representation);
 		this.valeur=valeur;
 	}
-	public double getValeur() {
+	public int getValeur() {
 		return valeur;
 	}
-	public void setValeur(double valeur) {
+	public void setValeur( int valeur) {
 		this.valeur = valeur;
 	}
 	

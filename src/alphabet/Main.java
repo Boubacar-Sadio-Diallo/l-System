@@ -1,6 +1,6 @@
 package alphabet;
 import java.util.LinkedList;
-import tortue.Tortue;
+//import tortue.Tortue;
 public class Main {
 
 	public static void main(String[] args) {
@@ -23,18 +23,27 @@ public class Main {
 		AutreevoluerTest.add(effe);
 		AutreevoluerTest.add(ava);
 		effe.setEvolution(AutreevoluerTest);
-		Generation generat=new Generation(testGene);
+		/*Generation generat=new Generation(testGene);
 		for(int i=0;i<3;i++) {
 			System.out.println(generat.representationNext()+"\n");
 			System.out.println(Generation.getCountGen());
 			generat = generat.nextGeneration();
 			
+		}*/
+		LSystem lsystem = new LSystem(AutreevoluerTest,45);
+		/*for(int i=0;i<3;i++) {
+			System.out.println(lsystem.representationNext()+"\n");
+			lsystem.affecterNextGenToDev();
 		}
-		double x =4.4;
-		System.out.println(x);
-		System.out.println((int)x);
+		System.out.println("\n\n ----------------------------------------------------- \n\n");*/
+		lsystem.affecterNextGenToDevNFois(1);
+		System.out.println(lsystem.representationNextNFois(1));
 		
-
+		double nombre =4.4;
+		System.out.println(nombre);
+		System.out.println((float) nombre);
+		System.out.println((int) nombre);
 	}
 
 }
+

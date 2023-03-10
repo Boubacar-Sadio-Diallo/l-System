@@ -18,7 +18,6 @@ public class Generation {
 		return genSuiv;
 	}
 	
-	
 	@Override
 	public String toString() {
 		String chaine="::";
