@@ -19,7 +19,7 @@ public class LSystem {
 		TournerSensHoraire tournerSensHoraire = new TournerSensHoraire();
 		tournerSensHoraire.setValeur(angle);
 		TournerSensTrigo tournerSensTrigo = new TournerSensTrigo();
-		tournerSensTrigo.setValeur(angle);
+		tournerSensTrigo.setValeur(-angle);
 		this.regles  = new HashMap<Character,MembreAlpha>();
 		this.regles.put(dessinerAvancer.getRepresentation(), dessinerAvancer);
 		this.regles.put(avancer.getRepresentation(), avancer);
@@ -97,12 +97,12 @@ public class LSystem {
 		return this.getniveauGeneration()+this.toString()+"\n"+ (this.getniveauGeneration()+1)+"\n"+chaine+"::";
 	}
 	
-	public void affecterNextGenToDevNFois(int n) {
-		this.nextGenerationNFois(n);
+	public void affecterNextGenToDev(int n) {
+		this.nextGeneration(n);
 		this.niveauGeneration+=n;
 		//this.developpement=nextGenerationNFois(n);
 	}
-	public LinkedList<MembreAlpha> nextGenerationNFois(int n) {
+	public LinkedList<MembreAlpha> nextGeneration(int n) {
 		LinkedList<MembreAlpha> prochain = new LinkedList<MembreAlpha>();
 		LinkedList<MembreAlpha> copy = new LinkedList<MembreAlpha>();
 		copy.addAll(this.developpement);
@@ -113,13 +113,24 @@ public class LSystem {
 		}
 		return prochain;
 	}
-	public String representationNextNFois(int n) {
+	public String representationNext(int n) {
 		String chaine="::";
-		for(MembreAlpha symbole : this.nextGenerationNFois(n)) {
+		for(MembreAlpha symbole : this.nextGeneration(n)) {
 			chaine+=symbole.toString()+" ";
 		}
 		return "0"+this.toString()+"\n"+ (this.getniveauGeneration())+"\n"+chaine+"::";
 	}
+	
+	public String affecterRepresenter(int n) {
+		this.affecterNextGenToDev(n);
+		return this.representationNext(n);
+	}
+	public String affecterRepresenter() {
+		return this.representationNext();
+	}
+	/* for (MembreAlpha symbole : this.developpement){
+	 * 	symbole.seDessiner();
+	 */
 	
 	
 

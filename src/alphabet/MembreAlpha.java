@@ -1,7 +1,8 @@
 package alphabet;
 import java.util.LinkedList;
+import tortue.*;
 
-public class MembreAlpha {
+public class MembreAlpha implements Dessin{
 	protected Character representation;
 	protected LinkedList<MembreAlpha> evolution;
 	protected boolean dessine;
@@ -44,6 +45,10 @@ public class MembreAlpha {
 	}
 	public void addEvolution(MembreAlpha membreEvolution) {
 		this.evolution.add(membreEvolution);
+	}
+	@Override
+	public void seDessiner(Tortue tortue) {
+		tortue.stay();
 	}
 	
 

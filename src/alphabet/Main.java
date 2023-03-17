@@ -36,11 +36,11 @@ public class Main {
 			lsystem.affecterNextGenToDev();
 		}
 		System.out.println("\n\n ----------------------------------------------------- \n\n");*/
-		lsystem.affecterNextGenToDevNFois(1);
-		System.out.println(lsystem.representationNextNFois(1));
+		System.out.println(lsystem.affecterRepresenter(10000));
+		System.out.println(lsystem.affecterRepresenter());
 		
 		double nombre =4.4;
-		System.out.println(nombre);
+		System.out.println("\n"+nombre);
 		System.out.println((float) nombre);
 		System.out.println((int) nombre);
 	}
