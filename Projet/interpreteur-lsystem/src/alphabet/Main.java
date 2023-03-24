@@ -53,6 +53,9 @@ public class Main {
 		System.out.println(lsystem.getRegles().get('F').getEvolution());
 		System.out.println(lsystem.representationRegles());
 		System.out.println(lsystem.getRegles().containsKey('F'));
+		lsystem.ajoutRegleSymbole('F','A');
+		lsystem.ajoutRegleSymbole('F','A');
+		System.out.println(lsystem.representationRegles());
 		/*for(int i=0;i<3;i++) {
 			System.out.println(lsystem.representationNext()+"\n");
 			lsystem.affecterNextGenToDev();

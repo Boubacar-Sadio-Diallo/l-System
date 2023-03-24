@@ -103,7 +103,7 @@ public class LSystem {
 		this.regles.get(charSymbQuiDoitChanger).setEvolution(this.regles.get(charSymbAAjouter));
 	}
 	public void ajoutRegleSymbole(Character charSymbQuiDoitChanger, Character charSymbAAjouter) {
-		if(!this.regles.containsKey(charSymbAAjouter)) {
+		if (!this.regles.containsKey(charSymbAAjouter)) {
 			//System.out.println("donc contient");
 			this.ajoutSymbole(charSymbAAjouter);
 			try {
@@ -119,7 +119,24 @@ public class LSystem {
 			} catch (NoSuchMethodException e) {
 				throw new RuntimeException(e);
 			}
-		}else {
+
+
+		} else if (charSymbAAjouter!='+'&&charSymbAAjouter!='-'&&charSymbAAjouter!=']'&&charSymbAAjouter!='['&&charSymbAAjouter!='f'&&charSymbAAjouter!='F') {
+			try {
+				//	System.out.println(this.regles);
+				this.regles.get(charSymbQuiDoitChanger).addEvolution(this.regles.get(charSymbAAjouter).getClass().getConstructor(MembreAlpha.class).newInstance(this.regles.get(charSymbAAjouter)));
+				//System.out.println("eh la");
+			} catch (InstantiationException e) {
+				throw new RuntimeException(e);
+			} catch (IllegalAccessException e) {
+				throw new RuntimeException(e);
+			} catch (InvocationTargetException e) {
+				throw new RuntimeException(e);
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+
+		} else {
 			//System.out.println("donc contient pas");
 			try {
 			//	System.out.println(this.regles);
