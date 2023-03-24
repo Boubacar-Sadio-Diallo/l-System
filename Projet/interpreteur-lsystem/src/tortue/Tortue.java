@@ -26,6 +26,7 @@ public class Tortue implements InterfaceTortue{
 	public Tortue(Graphics2D g2d) {
 		this(POSITION_DFT,/*LONGUEUR_TRAIT_DFT,*/ANGLE_DFT,g2d);
 	}
+
 	
 	
 	

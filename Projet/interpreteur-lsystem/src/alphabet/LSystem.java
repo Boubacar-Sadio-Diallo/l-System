@@ -1,14 +1,18 @@
 package alphabet;
+import tortue.Tortue;
+
 import java.util.HashMap;
 import java.util.LinkedList;
 public class LSystem {
 	
 	private LinkedList<MembreAlpha> developpement;
-	private int angle;
+	private double angle;
 	private HashMap<Character,MembreAlpha> regles;
 	private int niveauGeneration;
+	public static final int ANGLE_DFT=90;
 
-	public LSystem(LinkedList<MembreAlpha> developpement, int angle){
+
+	public LSystem(LinkedList<MembreAlpha> developpement, double angle){
 		this.developpement = developpement;
 		this.angle = angle;
 		this.niveauGeneration=0;
@@ -28,12 +32,19 @@ public class LSystem {
 		this.regles.put(tournerSensHoraire.getRepresentation(), tournerSensHoraire);
 		this.regles.put(tournerSensTrigo.getRepresentation(), tournerSensTrigo);
 	}
+	public LSystem(LinkedList<MembreAlpha> developpement){
+		this(developpement,ANGLE_DFT);
+	}
+	public LSystem(){
+		this(new LinkedList<MembreAlpha>(),ANGLE_DFT);
+		this.developpement.add(new DessinerAvancer());
+	}
 
 	public LinkedList<MembreAlpha> getDeveloppement() {
 		return developpement;
 	}
 
-	public int getAngle() {
+	public double getAngle() {
 		return angle;
 	}
 
@@ -45,7 +56,7 @@ public class LSystem {
 		return niveauGeneration;
 	}
 
-	public void setAngle(int angle) {
+	public void setAngle(double angle) {
 		this.angle = angle;
 	}
 
@@ -128,9 +139,12 @@ public class LSystem {
 	public String affecterRepresenter() {
 		return this.representationNext();
 	}
-	/* for (MembreAlpha symbole : this.developpement){
-	 * 	symbole.seDessiner();
-	 */
+
+	public void dessiner(Tortue tortue) {
+		for (MembreAlpha symbole : this.developpement) {
+			symbole.seDessiner(tortue);
+		}
+	}
 	
 	
 
