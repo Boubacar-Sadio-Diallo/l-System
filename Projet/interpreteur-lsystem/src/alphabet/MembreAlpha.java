@@ -16,6 +16,11 @@ public class MembreAlpha implements Dessin{
 		this(representation,new LinkedList<MembreAlpha>());
 		this.evolution.add(this);
 	}
+	public MembreAlpha(MembreAlpha membre) {
+		this.representation = membre.representation;
+		this.evolution=membre.evolution;
+		this.dessine=membre.dessine;
+	}
 
 	public Character getRepresentation() {
 		return representation;
@@ -41,6 +46,7 @@ public class MembreAlpha implements Dessin{
 	}
 	public void setEvolution (MembreAlpha membreEvolution) {
 		LinkedList<MembreAlpha> evolution2 = new LinkedList<MembreAlpha>();
+		evolution2.add(membreEvolution);
 		this.evolution=evolution2;
 	}
 	public void addEvolution(MembreAlpha membreEvolution) {
@@ -55,7 +61,16 @@ public class MembreAlpha implements Dessin{
 	@Override
 	public String toString() {
 		return ""+this.getRepresentation();
+
 	}
+	public String evolutionRepresentation(){
+		String rep=""+this.getRepresentation()+"=";
+		for (MembreAlpha membre:this.evolution){
+			rep+=membre.getRepresentation();
+		}
+		return rep;
+	}
+
 
 
 	

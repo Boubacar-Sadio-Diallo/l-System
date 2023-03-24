@@ -1,8 +1,11 @@
 package alphabet;
 import tortue.Tortue;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
+
 public class LSystem {
 	
 	private LinkedList<MembreAlpha> developpement;
@@ -52,6 +55,14 @@ public class LSystem {
 		return regles;
 	}
 
+	public String representationRegles(){
+		String rep="Règles :\n";
+		for(Map.Entry<Character,MembreAlpha> couple : this.regles.entrySet()){
+			rep+=couple.getValue().evolutionRepresentation()+"  /  ";
+		}
+		return rep;
+	}
+
 	public int getniveauGeneration() {
 		return niveauGeneration;
 	}
@@ -78,20 +89,50 @@ public class LSystem {
 	
 	public void ajoutSymbole(Character character) {
 		MembreAlpha nouveauSymbole = new MembreAlpha(character);
-		this.regles.put(nouveauSymbole.getRepresentation(), nouveauSymbole);
+		//System.out.println("création bonne");
+		this.regles.put(character, nouveauSymbole);
+		//System.out.println(this.regles);
 	}
 	public void changerRegleSymbole(Character charSymbQuiDoitChanger, Character charSymbAAjouter) {
 		if(!this.regles.containsKey(charSymbAAjouter)) {
 			this.ajoutSymbole(charSymbAAjouter);
+			//System.out.println("fait");
 		}
+		//this.regles.put(charSymbQuiDoitChanger,this.regles.get(charSymbQuiDoitChanger).setEvolution(this.regles.get(charSymbAAjouter)));
+		System.out.println(this.regles.get(charSymbAAjouter));
 		this.regles.get(charSymbQuiDoitChanger).setEvolution(this.regles.get(charSymbAAjouter));
 	}
 	public void ajoutRegleSymbole(Character charSymbQuiDoitChanger, Character charSymbAAjouter) {
 		if(!this.regles.containsKey(charSymbAAjouter)) {
+			//System.out.println("donc contient");
 			this.ajoutSymbole(charSymbAAjouter);
+			try {
+				//	System.out.println(this.regles);
+				this.regles.get(charSymbQuiDoitChanger).addEvolution(this.regles.get(charSymbAAjouter).getClass().getConstructor(MembreAlpha.class).newInstance(this.regles.get(charSymbAAjouter)));
+				//System.out.println("eh la");
+			} catch (InstantiationException e) {
+				throw new RuntimeException(e);
+			} catch (IllegalAccessException e) {
+				throw new RuntimeException(e);
+			} catch (InvocationTargetException e) {
+				throw new RuntimeException(e);
+			} catch (NoSuchMethodException e) {
+				throw new RuntimeException(e);
+			}
+		}else {
+			//System.out.println("donc contient pas");
+			try {
+			//	System.out.println(this.regles);
+				this.regles.get(charSymbQuiDoitChanger).addEvolution(this.regles.get(charSymbAAjouter).getClass().newInstance());
+				//System.out.println("eh la");
+			} catch (InstantiationException e) {
+				throw new RuntimeException(e);
+			} catch (IllegalAccessException e) {
+				throw new RuntimeException(e);
+			}
 		}
-		this.regles.get(charSymbQuiDoitChanger).addEvolution(this.regles.get(charSymbAAjouter));
 	}
+
 	public String toString() {
 		String chaine="\n::";
 		for (MembreAlpha symbole : this.developpement) {

@@ -13,13 +13,16 @@ public class TournerSensHoraire extends Mouvement {
 	}
 	public TournerSensHoraire(Character representation, double valeur) {
 		super(representation,valeur);
-		this.tourne=true;
+		//this.tourne=true;
 	}
 	public TournerSensHoraire() {
 		this(REPRESENTATION_BASE,VALEUR_BASE);
 	}
 	public TournerSensHoraire(double valeur) {
 		this(REPRESENTATION_BASE,valeur);
+	}
+	public TournerSensHoraire(TournerSensHoraire membre) {
+		this(membre.representation,membre.evolution,membre.valeur);
 	}
 	@Override
 	public void seDessiner(Tortue tortue) {

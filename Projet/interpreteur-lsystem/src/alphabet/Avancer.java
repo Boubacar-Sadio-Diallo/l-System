@@ -19,6 +19,9 @@ public class Avancer extends Mouvement {
 	public Avancer(double valeur) {
 		this(REPRESENTATION_BASE,valeur);
 	}
+	public Avancer(Avancer membre) {
+		this(membre.representation,membre.evolution,membre.valeur);
+	}
 	@Override
 	public void seDessiner(Tortue tortue) {
 		tortue.avancerSansTracer((int)this.valeur);
