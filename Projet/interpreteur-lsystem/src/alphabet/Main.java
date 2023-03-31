@@ -39,7 +39,7 @@ public class Main {
 		System.out.println(lsystem.getRegles());
 		System.out.println(lsystem.representationRegles());*/
 		System.out.println(lsystem.representationRegles());
-		lsystem.changerRegleSymbole('F','f');
+		lsystem.ajoutRegleSymbole('F','f');
 		System.out.println(lsystem.representationRegles());
 		System.out.println(lsystem.getRegles());
 		lsystem.changerRegleSymbole('F','B');
@@ -61,13 +61,14 @@ public class Main {
 			lsystem.affecterNextGenToDev();
 		}
 		System.out.println("\n\n ----------------------------------------------------- \n\n");*/
-		/*System.out.println(lsystem.affecterRepresenter(10000));
-		System.out.println(lsystem.affecterRepresenter());
+		//System.out.println(lsystem.affecterRepresenter());
+		System.out.println(lsystem.representationNext());
+		System.out.println(lsystem);
 		
 		double nombre =4.4;
 		System.out.println("\n"+nombre);
 		System.out.println((float) nombre);
-		System.out.println((int) nombre);*/
+		System.out.println((int) nombre);
 	}
 
 }

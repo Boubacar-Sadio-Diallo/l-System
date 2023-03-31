@@ -1,12 +1,12 @@
 package alphabet;
+import mvc.AbstractModeleEcoutable;
 import tortue.Tortue;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
 
-public class LSystem {
+public class LSystem extends AbstractModeleEcoutable {
 	
 	private LinkedList<MembreAlpha> developpement;
 	private double angle;
@@ -102,7 +102,7 @@ public class LSystem {
 		System.out.println(this.regles.get(charSymbAAjouter));
 		this.regles.get(charSymbQuiDoitChanger).setEvolution(this.regles.get(charSymbAAjouter));
 	}
-	public void ajoutRegleSymbole(Character charSymbQuiDoitChanger, Character charSymbAAjouter) {
+	/*public void ajoutRegleSymbole(Character charSymbQuiDoitChanger, Character charSymbAAjouter) {
 		if (!this.regles.containsKey(charSymbAAjouter)) {
 			//System.out.println("donc contient");
 			this.ajoutSymbole(charSymbAAjouter);
@@ -148,6 +148,15 @@ public class LSystem {
 				throw new RuntimeException(e);
 			}
 		}
+	}*/
+	public void ajoutRegleSymbole(Character charSymbQuiDoitChanger, Character charSymbAAjouter) {
+		MembreAlpha s1=this.regles.get(charSymbAAjouter);
+		if(s1==null){
+			s1=new MembreAlpha(charSymbAAjouter);
+			this.regles.put(charSymbAAjouter,s1);
+		}
+		MembreAlpha s2=this.regles.get(charSymbQuiDoitChanger);
+		s2.addEvolution(s1);
 	}
 
 	public String toString() {
@@ -163,10 +172,12 @@ public class LSystem {
 		for(MembreAlpha symbole : this.nextGeneration()) {
 			chaine+=symbole.toString()+" ";
 		}
+		this.notifierLesEcouteurs();
 		return this.getniveauGeneration()+this.toString()+"\n"+ (this.getniveauGeneration()+1)+"\n"+chaine+"::";
 	}
-	
-	public void affecterNextGenToDev(int n) {
+
+
+	/*public void affecterNextGenToDev(int n) {
 		this.nextGeneration(n);
 		this.niveauGeneration+=n;
 		//this.developpement=nextGenerationNFois(n);
@@ -193,10 +204,8 @@ public class LSystem {
 	public String affecterRepresenter(int n) {
 		this.affecterNextGenToDev(n);
 		return this.representationNext(n);
-	}
-	public String affecterRepresenter() {
-		return this.representationNext();
-	}
+	}*/
+
 
 	public void dessiner(Tortue tortue) {
 		for (MembreAlpha symbole : this.developpement) {
