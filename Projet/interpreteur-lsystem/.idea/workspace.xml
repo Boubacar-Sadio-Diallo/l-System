@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5bdff227-ba2a-4bfe-8a82-ade4133093c1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interpreteur-lsystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/interpreteur-lsystem.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/execution/Demo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/execution/Demo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/alphabet/Avancer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/alphabet/Avancer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/alphabet/DessinerAvancer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/alphabet/DessinerAvancer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/alphabet/Mouvement.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/alphabet/Mouvement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/alphabet/RestaurerPosition.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/alphabet/RestaurerPosition.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/alphabet/SauverPosition.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/alphabet/SauverPosition.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/alphabet/TournerSensHoraire.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/alphabet/TournerSensHoraire.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/alphabet/TournerSensTrigo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/alphabet/TournerSensTrigo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/system/LSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/system/LSystem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/system/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/system/Parser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/newpackage/LSystemGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/newpackage/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/newpackage/Tortue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/views/LeftPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/views/LeftPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/execution/Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/execution/Demo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/execution/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/execution/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/alphabet/Avancer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/alphabet/Avancer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/alphabet/DessinerAvancer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/alphabet/DessinerAvancer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/alphabet/MembreAlpha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/alphabet/MembreAlpha.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/alphabet/Mouvement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/alphabet/Mouvement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/alphabet/RestaurerPosition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/alphabet/RestaurerPosition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/alphabet/SauverPosition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/alphabet/SauverPosition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/alphabet/TournerSensHoraire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/alphabet/TournerSensHoraire.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/alphabet/TournerSensTrigo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/alphabet/TournerSensTrigo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/system/LSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/system/LSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/system/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/system/Parser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tortue/Dessin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tortue/Dessin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tortue/InterfaceTortue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tortue/InterfaceTortue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tortue/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tortue/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tortue/Tortue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tortue/Tortue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/AbstractModeleEcoutable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/AbstractModeleEcoutable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/EcouteurModele.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/EcouteurModele.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/ModelEcoutable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/ModelEcoutable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/ExamplePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/ExamplePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/LeftPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/LeftPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/PrincipalView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/PrincipalView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/RightPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/RightPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../fichiersSources/alphabet/Avancer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../fichiersSources/alphabet/Avancer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../fichiersSources/alphabet/DessinerAvancer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../fichiersSources/alphabet/DessinerAvancer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../fichiersSources/alphabet/Generation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../fichiersSources/alphabet/Generation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../fichiersSources/alphabet/LSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../fichiersSources/alphabet/LSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../fichiersSources/alphabet/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../fichiersSources/alphabet/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../fichiersSources/alphabet/MembreAlpha.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../fichiersSources/alphabet/MembreAlpha.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../fichiersSources/alphabet/Mouvement.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../fichiersSources/alphabet/Mouvement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../fichiersSources/alphabet/RestaurerPosition.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../fichiersSources/alphabet/RestaurerPosition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../fichiersSources/alphabet/SauverPosition.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../fichiersSources/alphabet/SauverPosition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../fichiersSources/alphabet/TournerSensHoraire.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../fichiersSources/alphabet/TournerSensHoraire.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../fichiersSources/alphabet/TournerSensTrigo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../fichiersSources/alphabet/TournerSensTrigo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../fichiersSources/tortue/Dessin.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../fichiersSources/tortue/Dessin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../fichiersSources/tortue/InterfaceTortue.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../fichiersSources/tortue/InterfaceTortue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../fichiersSources/tortue/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../fichiersSources/tortue/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../fichiersSources/tortue/Tortue.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../fichiersSources/tortue/Tortue.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectId" id="2NphH3MWolZWYh8NG1eViF5FCat" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/home/damien/git/interpreteur-de-l-systeme/Projet/interpreteur-lsystem"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5bdff227-ba2a-4bfe-8a82-ade4133093c1" name="Changes" comment="" />
+      <created>1680366840652</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1680366840652</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
