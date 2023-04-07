@@ -2,21 +2,21 @@ package models.alphabet;
 import java.util.LinkedList;
 import tortue.*;
 
-public class MembreAlpha implements Dessin{
+public class Symbole implements Dessin{
 	protected Character representation;
-	protected LinkedList<MembreAlpha> evolution;
+	protected LinkedList<Symbole> evolution;
 	protected boolean dessine;
 
-	public MembreAlpha(Character representation, LinkedList<MembreAlpha> evolution) {
+	public Symbole(Character representation, LinkedList<Symbole> evolution) {
 		this.representation = representation;
 		this.evolution=evolution;
 		this.dessine=false;
 	}
-	public MembreAlpha(Character representation) {
-		this(representation,new LinkedList<MembreAlpha>());
+	public Symbole(Character representation) {
+		this(representation,new LinkedList<Symbole>());
 		this.evolution.add(this);
 	}
-	public MembreAlpha(MembreAlpha membre) {
+	public Symbole(Symbole membre) {
 		this.representation = membre.representation;
 		this.evolution=membre.evolution;
 		this.dessine=membre.dessine;
@@ -37,19 +37,19 @@ public class MembreAlpha implements Dessin{
 	public void setDessine(boolean dessine) {
 		this.dessine = dessine;
 	}
-	public LinkedList<MembreAlpha> getEvolution() {
+	public LinkedList<Symbole> getEvolution() {
 		return evolution;
 	}
 
-	public void setEvolution (LinkedList<MembreAlpha> evolution) {
+	public void setEvolution (LinkedList<Symbole> evolution) {
 		this.evolution = evolution;
 	}
-	public void setEvolution (MembreAlpha membreEvolution) {
-		LinkedList<MembreAlpha> evolution2 = new LinkedList<MembreAlpha>();
+	public void setEvolution (Symbole membreEvolution) {
+		LinkedList<Symbole> evolution2 = new LinkedList<Symbole>();
 		evolution2.add(membreEvolution);
 		this.evolution=evolution2;
 	}
-	public void addEvolution(MembreAlpha membreEvolution) {
+	public void addEvolution(Symbole membreEvolution) {
 		this.evolution.add(membreEvolution);
 	}
 	@Override
@@ -65,7 +65,7 @@ public class MembreAlpha implements Dessin{
 	}
 	public String evolutionRepresentation(){
 		String rep=""+this.getRepresentation()+"=";
-		for (MembreAlpha membre:this.evolution){
+		for (Symbole membre:this.evolution){
 			rep+=membre.getRepresentation();
 		}
 		return rep;
