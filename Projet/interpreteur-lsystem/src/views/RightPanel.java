@@ -4,8 +4,11 @@
  */
 package views;
 
-import java.awt.Color;
-import java.awt.Dimension;
+import models.system.LSystem;
+import tortue.Point;
+import tortue.Tortue;
+
+import java.awt.*;
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 
@@ -14,9 +17,9 @@ import javax.swing.JLabel;
  * @author ANTOINE
  */
 public class RightPanel extends JLabel {
-
-    public RightPanel() {
-        
+    private LSystem lSystem;
+    public RightPanel(LSystem lSystem) {
+        this.lSystem=lSystem;
         
         JLabel label = new JLabel("Mon panneau droit");
         this.add(label);
@@ -24,7 +27,14 @@ public class RightPanel extends JLabel {
         this.setBackground(Color.BLACK);
         this.setPreferredSize(new Dimension(1200, 1000));
         this.setBorder(BorderFactory.createLineBorder(Color.black));
+
         
+    }
+    public void paintComponent(Graphics g){
+        Graphics2D g2d = (Graphics2D) g;
+        Tortue tortue= new Tortue(g2d);
+        tortue.setPosition(new Point(200,200));
+        lSystem.dessiner(tortue);
     }
 
 }

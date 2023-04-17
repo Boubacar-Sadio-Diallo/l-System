@@ -4,12 +4,11 @@
  */
 package execution;
 
-import views.LeftPanel;
-import views.RightPanel;
+import models.system.LSystem;
+import views.PrincipalViewGUI;
+
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 
 /**
  *
@@ -21,8 +20,9 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
-        JFrame frame = new JFrame();
+        LSystem lSystem=new LSystem();
+        PrincipalViewGUI principalView =new PrincipalViewGUI(lSystem);
+        /*JFrame frame = new JFrame();
         JPanel conteneur = new JPanel(new FlowLayout(FlowLayout.LEFT));
 //        panelGauche.setBackground(Color.WHITE);
         
@@ -30,7 +30,7 @@ public class Main {
         conteneur.add(new RightPanel());
         frame.add(conteneur);
                
-        createJFrame(frame, "lindenmayer system - project", 850, 600);
+        createJFrame(frame, "lindenmayer system - project", 850, 600);*/
         
         
         

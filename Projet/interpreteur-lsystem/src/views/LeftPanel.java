@@ -53,17 +53,17 @@ public class LeftPanel extends JPanel implements ActionListener {
     JPanel btnGroupPanel;
     GridBagConstraints gbc;
 
-    LSystem reglesProd = new LSystem();
-    Parser parser;
+    private LSystem lsystem;
+    //Parser parser;
 
-    public LeftPanel() {
-        this("Axiome:", "Angle:", "Règles:", "Itération(s):", "Longueur:", "Dessiner", "Reinitialiser", WIDTH_JTEXTFIELD, HEIGHT_JTEXTFIELD);
+    public LeftPanel(LSystem lsystem) {
+        this("Axiome:", "Angle:", "Règles:", "Itération(s):", "Longueur:", "Dessiner", "Reinitialiser", WIDTH_JTEXTFIELD, HEIGHT_JTEXTFIELD, lsystem);
     }
 
-    public LeftPanel(String axiomeString, String angleString, String reglesString, String nombreIterationsString, String longueurString, String submitString, String resetString, int widthJTextField, int heightJtextField) {
-
+    public LeftPanel(String axiomeString, String angleString, String reglesString, String nombreIterationsString, String longueurString, String submitString, String resetString, int widthJTextField, int heightJtextField,LSystem lsystem) {
         /*DEBUT INITIALISATION*/
         // Initialisation des variables
+        this.lsystem=lsystem;
         this.axiomeString = axiomeString;
         this.angleString = angleString;
         this.reglesString = reglesString;
@@ -204,23 +204,24 @@ public class LeftPanel extends JPanel implements ActionListener {
             String chaineLongueur = this.txtLongueur.getText();
             String chaineIteration = this.txtNombreIterations.getText();
             String chaineRules=this.txtRegles.getText();
-            parser=new Parser(chaineAxiome,chaineAngle,chaineLongueur,chaineIteration,chaineRules);
+             Parser parser=new Parser(chaineAxiome,chaineAngle,chaineLongueur,chaineIteration,chaineRules);
             if(parser.isValid()) {
-                reglesProd.setNiveauGeneration(0);
-                reglesProd.setDeveloppement(this.txtAxiome.getText());
-                reglesProd.setAngle(Double.parseDouble(this.txtAngle.getText()));
-                System.out.println(chaineRules);
+                lsystem.setNiveauGeneration(0);
+                lsystem.setDeveloppement(this.txtAxiome.getText());
+                lsystem.setAngle(Double.parseDouble(this.txtAngle.getText()));
                 String[] chaqueRegle= chaineRules.split("\n");
                 for(String a : chaqueRegle){
-                        reglesProd.changerRegleSymbole(a.charAt(0),a.charAt(2));
+                        if(a.length()!=0){
+                            lsystem.changerRegleSymbole(a.charAt(0),a.charAt(2));
+                        }
                         if(a.length()>3){
                             for(int i=3;i<a.length();i++) {
-                                reglesProd.ajoutRegleSymbole(a.charAt(0), a.charAt(i));
+                                lsystem.ajoutRegleSymbole(a.charAt(0), a.charAt(i));
                             }
                         }
                 }
-                System.out.println(reglesProd.representationRegles());
-                reglesProd.repEtSuivant(Integer.parseInt(chaineIteration));
+                System.out.println(lsystem.representationRegles());
+                lsystem.repEtSuivant(Integer.parseInt(chaineIteration));
 
 
             } else if (!parser.islexical()){

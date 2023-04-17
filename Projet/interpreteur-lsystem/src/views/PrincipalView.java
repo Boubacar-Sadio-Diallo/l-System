@@ -1,18 +1,34 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package views;
 
-import javax.swing.JFrame;
+import models.system.LSystem;
+import util.EcouteurModele;
+import util.ModelEcoutable;
 
-/**
- *
- * @author ANTOINE
- */
-public class PrincipalView extends JFrame {
-    
-    
-    
-    
+import javax.swing.*;
+import java.awt.*;
+
+public class PrincipalView extends JPanel implements EcouteurModele {
+    private LSystem lSystem;
+    private LeftPanel leftPanel;
+    private RightPanel rightPanel;
+    public PrincipalView(LSystem lSystem){
+        this.lSystem=new LSystem();
+        this.setLayout(new FlowLayout((FlowLayout.LEFT)));
+        this.leftPanel=new LeftPanel(lSystem);
+        this.rightPanel=new RightPanel(lSystem);
+
+        this.add(this.leftPanel);
+        this.add(this.rightPanel);
+    }
+    @Override
+    public void modeleMisAJour(ModelEcoutable source) {
+        if(source==lSystem){
+            repaint();
+        }
+    }
+    public void paintComponent(Graphics g){
+        this.rightPanel.repaint();
+    }
+
+
 }

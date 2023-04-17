@@ -43,7 +43,7 @@ public class Parser {
 		axiomeAutorises += getAxiom; 
 	}
 	public boolean isValid() {
-	
+
 		if(!islexical() || !isSyntaxic()) {
 			//
 			//System.out.println("la règle est mal ecrite!!!");
@@ -62,7 +62,8 @@ public class Parser {
 			//System.out.println("Angle incorrect");
 			return false;
 		}
-		if(!isRulesValid()){
+
+		if(isRulesValid()==false){
 			return false;
 		}
 			System.out.println("tout bien écrit");
@@ -161,6 +162,9 @@ public class Parser {
 	public boolean isIterationCorrect(){return this.isANumberValid(this.iteration);}
 
 	public boolean isRulesValid(){
+		if(this.rules.isEmpty()){
+			return true;
+		}
 		if(!Pattern.compile("^[a-zA-Z\\+\\-\\[\\]]=[a-zA-Z\\+\\-\\[\\]]+").matcher(this.rules).find()){
 			return false;
 		}
