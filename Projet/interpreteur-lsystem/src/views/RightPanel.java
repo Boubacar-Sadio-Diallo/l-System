@@ -33,7 +33,7 @@ public class RightPanel extends JLabel {
     public void paintComponent(Graphics g){
         Graphics2D g2d = (Graphics2D) g;
         Tortue tortue= new Tortue(g2d);
-        tortue.setPosition(new Point(200,200));
+        tortue.setPosition(new Point(200,800));
         lSystem.dessiner(tortue);
     }
 

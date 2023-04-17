@@ -22,12 +22,8 @@ public interface InterfaceTortue {
 		  * Tourner contre le sens de l'aiguille
 		 * @return 
 		  */
-		 public void tournerSensHoraire(double angle) ;
-		 /**
-		  * Tourner contre le sens de l'aiguille
-		  */
-		 public void tournerSensTrigo(double angle);
-		 
+		 public void tourner(double angle) ;
+
 		 /**
 		  *Ne fait rien 
 		  */

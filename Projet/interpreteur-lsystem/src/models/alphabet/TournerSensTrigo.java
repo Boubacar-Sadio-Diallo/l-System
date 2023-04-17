@@ -5,7 +5,7 @@ import tortue.Tortue;
 
 public class TournerSensTrigo extends Mouvement {
 	private static final Character REPRESENTATION_BASE='+';
-	private static final double VALEUR_BASE=90;
+	private static final double VALEUR_BASE=-90;
 	
 	public TournerSensTrigo(Character representation, LinkedList<Symbole> evolution , double valeur)  {
 		super(representation,evolution,valeur);
@@ -26,7 +26,7 @@ public class TournerSensTrigo extends Mouvement {
 	}
 	@Override
 	public void seDessiner(Tortue tortue) {
-		tortue.tournerSensTrigo(valeur);
+		tortue.tourner(valeur);
 	}
 	
 }

@@ -4,6 +4,7 @@
  */
 package views;
 
+import models.alphabet.Mouvement;
 import models.system.*;
 
 import javax.swing.*;
@@ -209,6 +210,8 @@ public class LeftPanel extends JPanel implements ActionListener {
                 lsystem.setNiveauGeneration(0);
                 lsystem.setDeveloppement(this.txtAxiome.getText());
                 lsystem.setAngle(Double.parseDouble(this.txtAngle.getText()));
+                System.out.println(lsystem.getAngle());
+                System.out.println(((Mouvement) lsystem.getRegles().get('+')).getValeur());
                 String[] chaqueRegle= chaineRules.split("\n");
                 for(String a : chaqueRegle){
                         if(a.length()!=0){
@@ -222,6 +225,7 @@ public class LeftPanel extends JPanel implements ActionListener {
                 }
                 System.out.println(lsystem.representationRegles());
                 lsystem.repEtSuivant(Integer.parseInt(chaineIteration));
+
 
 
             } else if (!parser.islexical()){

@@ -77,6 +77,13 @@ public class LSystem extends AbstractModeleEcoutable {
 
 	public void setAngle(double angle) {
 		this.angle = angle;
+		TournerSensHoraire tournerSensHoraire = new TournerSensHoraire();
+		tournerSensHoraire.setValeur(angle);
+		TournerSensTrigo tournerSensTrigo = new TournerSensTrigo();
+		tournerSensTrigo.setValeur(-angle);
+		this.regles.put(tournerSensHoraire.getRepresentation(), tournerSensHoraire);
+		this.regles.put(tournerSensTrigo.getRepresentation(), tournerSensTrigo);
+
 	}
 
 	public void setRegles(HashMap<Character, Symbole> regles) {

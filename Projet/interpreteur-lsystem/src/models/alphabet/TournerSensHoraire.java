@@ -26,7 +26,11 @@ public class TournerSensHoraire extends Mouvement {
 	}
 	@Override
 	public void seDessiner(Tortue tortue) {
-		tortue.tournerSensHoraire(valeur);
+		tortue.tourner(valeur);
 	}
-	
+
+	@Override
+	public double getValeur() {
+		return super.getValeur();
+	}
 }

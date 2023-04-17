@@ -14,7 +14,7 @@ public class Tortue implements InterfaceTortue{
 	
 	private static final Point POSITION_DFT=new Point(0,0);
 	//private static final int LONGUEUR_TRAIT_DFT=50;
-	private static final double ANGLE_DFT=90;
+	private static final double ANGLE_DFT=0;
 	
 	public Tortue(Point position,/* int longueurTrait,*/ double angle, Graphics2D g2d) {
 		this.position = position;
@@ -73,14 +73,9 @@ public class Tortue implements InterfaceTortue{
 		this.position=newPosition;
 	}
 	@Override
-	public void tournerSensHoraire(double angleSymbole) {//-
-		this.angle-=angleSymbole%360;
-		
-	}
-	@Override
-	public void tournerSensTrigo(double angleSymbole) {//+
-		this.angle+=angleSymbole%360;
-		
+	public void tourner(double angleSymbole) {//-
+		this.angle += angleSymbole;
+
 	}
 	@Override
 	public void stay() {//alphabets -> constantes

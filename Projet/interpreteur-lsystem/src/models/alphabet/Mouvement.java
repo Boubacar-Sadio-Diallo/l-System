@@ -22,7 +22,7 @@ public abstract class Mouvement extends Symbole {
 
 
 	public double getValeur() {
-		return valeur;
+		return this.valeur;
 	}
 	public void setValeur( double valeur) {
 		this.valeur = valeur;
