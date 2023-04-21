@@ -12,7 +12,7 @@ public class PrincipalView extends JPanel implements EcouteurModele {
     private LeftPanel leftPanel;
     private RightPanel rightPanel;
     public PrincipalView(LSystem lSystem){
-        this.lSystem=new LSystem();
+        this.lSystem=lSystem;
         this.setLayout(new FlowLayout((FlowLayout.LEFT)));
         this.leftPanel=new LeftPanel(lSystem);
         this.rightPanel=new RightPanel(lSystem);
@@ -27,6 +27,7 @@ public class PrincipalView extends JPanel implements EcouteurModele {
         }
     }
     public void paintComponent(Graphics g){
+        super.paintComponent(g);
         this.rightPanel.repaint();
     }
 

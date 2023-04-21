@@ -3,9 +3,11 @@ package tortue;
 public class Point {
 	private int x;
 	private int y;
-	public Point(int x,int y) {
+	private double angle;
+	public Point(int x,int y,double angle) {
 		this.x=x;
 		this.y=y;
+		this.angle=angle;
 	}
 	public int getX() {
 		return x;
@@ -19,7 +21,15 @@ public class Point {
 	public void setY(int y) {
 		this.y = y;
 	}
-	
+
+	public double getAngle() {
+		return angle;
+	}
+
+	public void setAngle(double angle) {
+		this.angle = angle;
+	}
+
 	@Override
 	public String toString() {
 		return "("+this.x+","+this.y+")";

@@ -1,5 +1,7 @@
 package models.alphabet;
 
+import tortue.Tortue;
+
 import java.util.LinkedList;
 
 public class SauverPosition extends Symbole {
@@ -16,4 +18,8 @@ public class SauverPosition extends Symbole {
 		this(REPRESENTATION_BASE);
 	}
 
+	@Override
+	public void seDessiner(Tortue tortue) {
+		tortue.sauverPosition();
+	}
 }

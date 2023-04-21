@@ -54,7 +54,7 @@ public class Symbole implements Dessin{
 	}
 	@Override
 	public void seDessiner(Tortue tortue) {
-		tortue.stay();
+		//tortue.stay();
 	}
 	
 

@@ -14,7 +14,7 @@ import java.awt.*;
  * @author ANTOINE
  */
 public class PrincipalViewGUI extends JFrame {
-    private LSystem lSystem = new LSystem();
+    private LSystem lSystem;
     public PrincipalViewGUI(LSystem lSystem){
         this.lSystem=lSystem;
 
@@ -28,6 +28,9 @@ public class PrincipalViewGUI extends JFrame {
         this.add(principalView);
 
         createJFrame(this, "lindenmayer system - project", 850, 600);
+    }
+    public PrincipalViewGUI(){
+        this(new LSystem());
     }
 
 

@@ -207,24 +207,24 @@ public class LeftPanel extends JPanel implements ActionListener {
             String chaineRules=this.txtRegles.getText();
              Parser parser=new Parser(chaineAxiome,chaineAngle,chaineLongueur,chaineIteration,chaineRules);
             if(parser.isValid()) {
-                lsystem.setNiveauGeneration(0);
-                lsystem.setDeveloppement(this.txtAxiome.getText());
-                lsystem.setAngle(Double.parseDouble(this.txtAngle.getText()));
-                System.out.println(lsystem.getAngle());
-                System.out.println(((Mouvement) lsystem.getRegles().get('+')).getValeur());
+                this.lsystem.setNiveauGeneration(0);
+                this.lsystem.setDeveloppement(this.txtAxiome.getText());
+                this.lsystem.setAngle(Double.parseDouble(this.txtAngle.getText()));
+                System.out.println(this.lsystem.getAngle());
+                System.out.println(((Mouvement) this.lsystem.getRegles().get('+')).getValeur());
                 String[] chaqueRegle= chaineRules.split("\n");
                 for(String a : chaqueRegle){
                         if(a.length()!=0){
-                            lsystem.changerRegleSymbole(a.charAt(0),a.charAt(2));
+                            this.lsystem.changerRegleSymbole(a.charAt(0),a.charAt(2));
                         }
                         if(a.length()>3){
                             for(int i=3;i<a.length();i++) {
-                                lsystem.ajoutRegleSymbole(a.charAt(0), a.charAt(i));
+                                this.lsystem.ajoutRegleSymbole(a.charAt(0), a.charAt(i));
                             }
                         }
                 }
-                System.out.println(lsystem.representationRegles());
-                lsystem.repEtSuivant(Integer.parseInt(chaineIteration));
+                System.out.println(this.lsystem.representationRegles());
+                this.lsystem.repEtSuivant(Integer.parseInt(chaineIteration));
 
 
 

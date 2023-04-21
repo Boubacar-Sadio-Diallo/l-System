@@ -7,14 +7,15 @@ import java.util.Stack;
 public class Tortue implements InterfaceTortue{
 	
 	private Point position;
-	//private int longueurTrait;
+	private int longueurTrait;
 	private Stack<Point> pile_xy;
 	private double angle;
 	private Graphics2D g2d;
 	
-	private static final Point POSITION_DFT=new Point(0,0);
+
 	//private static final int LONGUEUR_TRAIT_DFT=50;
-	private static final double ANGLE_DFT=0;
+	private static final double ANGLE_DFT=270;
+	private static final Point POSITION_DFT=new Point(100,800,ANGLE_DFT);
 	
 	public Tortue(Point position,/* int longueurTrait,*/ double angle, Graphics2D g2d) {
 		this.position = position;
@@ -22,6 +23,7 @@ public class Tortue implements InterfaceTortue{
 		this.pile_xy = new Stack<Point>();
 		this.angle = angle;
 		this.g2d=g2d;
+		this.position.setAngle(this.angle);
 	}
 	public Tortue(Graphics2D g2d) {
 		this(POSITION_DFT,/*LONGUEUR_TRAIT_DFT,*/ANGLE_DFT,g2d);
@@ -53,12 +55,13 @@ public class Tortue implements InterfaceTortue{
 	}
 	public void setAngle(double angle) {
 		this.angle = angle;
+		this.position.setAngle(this.angle);
 	}
 	
 	public Point positionFuture(int distance) {
 		 double newX =this.position.getX() + distance * Math.cos(Math.toRadians(angle));
 		 double newY =this.position.getY() + distance * Math.sin(Math.toRadians(angle));
-		 return new Point((int)newX,(int)newY);
+		 return new Point((int)newX,(int)newY,angle);
 	}
 	
 	@Override
@@ -74,7 +77,8 @@ public class Tortue implements InterfaceTortue{
 	}
 	@Override
 	public void tourner(double angleSymbole) {//-
-		this.angle += angleSymbole;
+		this.angle = (this.angle + angleSymbole)%360;
+		this.position.setAngle(this.angle);
 
 	}
 	@Override
@@ -88,6 +92,7 @@ public class Tortue implements InterfaceTortue{
 	@Override
 	public void restaurerPosition() { // ]
 		this.position=this.pile_xy.pop();
+		this.angle=this.position.getAngle();
 	}
 	public Graphics2D getG2d() {
 		return g2d;
