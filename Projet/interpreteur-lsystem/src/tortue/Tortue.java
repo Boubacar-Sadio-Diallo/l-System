@@ -15,7 +15,7 @@ public class Tortue implements InterfaceTortue{
 
 	//private static final int LONGUEUR_TRAIT_DFT=50;
 	private static final double ANGLE_DFT=0;
-	private static final Point POSITION_DFT=new Point(100,800,ANGLE_DFT);
+	private static final Point POSITION_DFT=new Point(100,600,ANGLE_DFT);
 	
 	public Tortue(Point position,/* int longueurTrait,*/ double angle, Graphics2D g2d) {
 		this.position = position;
