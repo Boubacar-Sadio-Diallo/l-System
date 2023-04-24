@@ -58,7 +58,7 @@ public class Symbole implements Dessin{
 	}
 	
 
-	@Override
+
 	public String toString() {
 		return ""+this.getRepresentation();
 
