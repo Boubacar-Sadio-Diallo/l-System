@@ -4,6 +4,9 @@ import tortue.Tortue;
 
 import java.util.LinkedList;
 
+/**
+ * Classe représentant une rotation dans le sens trigonométrique
+ */
 public class TournerSensTrigo extends Mouvement {
     private static final Character REPRESENTATION_BASE = '+';
     private static final double VALEUR_BASE = -90;
@@ -26,9 +29,6 @@ public class TournerSensTrigo extends Mouvement {
         this(REPRESENTATION_BASE, valeur);
     }
 
-    public TournerSensTrigo(TournerSensTrigo membre) {
-        this(membre.representation, membre.evolution, membre.valeur);
-    }
 
     @Override
     public void seDessiner(Tortue tortue) {

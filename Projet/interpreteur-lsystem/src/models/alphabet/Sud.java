@@ -1,10 +1,12 @@
 package models.alphabet;
 
 import java.util.LinkedList;
-
+/**
+ * Classe représentant une rotation fixe vers le sud
+ */
 public class Sud extends Cardinaux {
     private static final Character REPRESENTATION_BASE = '&';
-    private static final double VALEUR_BASE = 270;
+    private static final double VALEUR_BASE = 90;
 
     public Sud(Character representation, LinkedList<Symbole> evolution) {
         super(representation, evolution, VALEUR_BASE);
@@ -20,9 +22,7 @@ public class Sud extends Cardinaux {
         this(REPRESENTATION_BASE, VALEUR_BASE);
     }
 
-    public Sud(Sud membre) {
-        this(membre.representation, membre.evolution);
-    }
+
 
 
     @Override

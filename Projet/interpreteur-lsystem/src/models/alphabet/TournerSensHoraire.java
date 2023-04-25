@@ -4,6 +4,9 @@ import tortue.Tortue;
 
 import java.util.LinkedList;
 
+/**
+ * Classe représentant une rotation dans le sens horaire
+ */
 public class TournerSensHoraire extends Mouvement {
     private static final Character REPRESENTATION_BASE = '-';
     private static final double VALEUR_BASE = 90;
@@ -26,9 +29,7 @@ public class TournerSensHoraire extends Mouvement {
         this(REPRESENTATION_BASE, valeur);
     }
 
-    public TournerSensHoraire(TournerSensHoraire membre) {
-        this(membre.representation, membre.evolution, membre.valeur);
-    }
+
 
     @Override
     public void seDessiner(Tortue tortue) {

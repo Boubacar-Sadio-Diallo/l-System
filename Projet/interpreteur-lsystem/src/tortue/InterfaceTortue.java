@@ -7,7 +7,7 @@ package tortue;
 
 /**
  * @author diallo2210
- *
+ * Interface représentant une tortue qui dessine
  */
 public interface InterfaceTortue {
 		/**

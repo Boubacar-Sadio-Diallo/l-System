@@ -6,6 +6,9 @@ import tortue.Tortue;
 import java.util.LinkedList;
 import java.util.Objects;
 
+/**
+ * Classe représentant un Symbole de Lsystem
+ */
 public class Symbole implements Dessin {
     protected Character representation;
     protected LinkedList<Symbole> evolution;

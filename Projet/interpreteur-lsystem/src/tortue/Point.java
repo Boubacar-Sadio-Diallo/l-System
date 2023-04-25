@@ -1,5 +1,8 @@
 package tortue;
 
+/**
+ * Classe représentant une coordonnée ainsi que son angle
+ */
 public class Point {
 	private int x;
 	private int y;

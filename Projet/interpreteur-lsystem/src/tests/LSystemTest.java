@@ -105,7 +105,7 @@ class LSystemTest  {
         LSystem lSystem = new LSystem();
         lSystem.setDeveloppement("F");
         lSystem.affecterNextGenToDev(1);
-        assertEquals(1,lSystem.getniveauGeneration());
+        assertEquals(1,lSystem.getNiveauGeneration());
         LinkedList<Symbole> axiome = new LinkedList<>();
         axiome.add(lSystem.getRegles().get('F'));
         assertEquals(axiome,lSystem.getDeveloppement());

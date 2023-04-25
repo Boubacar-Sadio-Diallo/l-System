@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 
 /**
  * @author diallo2210
- *
+ *Classe permettant de décider si la saisie est correcte
  */
 public class Parser {
 	public String chaine;
@@ -23,6 +23,15 @@ public class Parser {
 	private String charAutorise = "+-[]FfAZERTYUIOPQSDGHJKLMWXCVBNazertyuiopqsdghjklmwxcvbn|^<>&";
 	private String axiomeAutorises = "";
 	//public static final double DOUBLE_DFT=45;
+
+	/**
+	 * Créer une instance de Parser
+	 * @param chaine axiome du lsystem
+	 * @param angle angle du lsystem
+	 * @param longueur longueur pour le lsystem
+	 * @param iteration niveau de réécriture
+	 * @param rules règles du lsystem
+	 */
 	public Parser(String chaine, String angle, String longueur,String iteration, String rules) {
 
 		this.chaine = chaine;
@@ -34,21 +43,18 @@ public class Parser {
 	public Parser(){
 		this("","","","","");
 	}
+
 	/**
-	 * Add Axiom to CharAutorise
-	 * @return
+	 * Décide si toutes les saisies sont correctement entrées
+	 * @return true si toutes les saisies sont correctes, false sinon
 	 */
-	public void addAxiomtoAutorisedChar(String getAxiom ) {
-		charAutorise += getAxiom;
-		axiomeAutorises += getAxiom; 
-	}
 	public boolean isValid() {
 
 		if(!islexical() || !isSyntaxic()) {
 			//
 			//System.out.println("la règle est mal ecrite!!!");
 			return false;
-		
+
 	}
 		if(!isAngleCorrect()){
 			//System.out.println("Angle incorrect");
@@ -69,6 +75,11 @@ public class Parser {
 			//System.out.println("tout bien écrit");
 		return true;
 	}
+
+	/**
+	 * Décide si les caractères sont des caractères autorisés
+	 * @return true si les caractères saisies sont dans la liste des caractères autorisés, false sinon
+	 */
 	public boolean islexical() {
 		int cpt = 0;
 		for(int i = 0;i<chaine.length();i++) {
@@ -90,10 +101,15 @@ public class Parser {
 				System.out.println("Il manque un crochet");
 				return false;
 			}
-			
+
 			return true;
-			
+
 		}
+
+	/**
+	 * Décide si les crochets sont bien utilisés s'il y en a
+	 * @return true si bien écrit, false sinon
+	 */
 	public boolean isSyntaxic() {
 		for(int i = 0; i < chaine.length();i++) {
 			if(chaine.charAt(i) == '[') {
@@ -103,25 +119,7 @@ public class Parser {
 						return false;
 					}
 				}
-				
-				if(i+1 <= chaine.length()-1) {
-					if(chaine.charAt(i+1) == '[') {
-						//je parcours le reste
-						for(int j=i+2; j<chaine.length();j++) {
-							if(chaine.charAt(j) == ']') {
-								if(j+1<=chaine.length()-1) {
-									if(chaine.charAt(j+1) == ']') {
-										System.out.println("double crochets");
-										return false;
-									}
-								}
-							}
-						}
-						
-					}
-				}
-				//si on a plus de fermente, je retourne false
-				
+
 				int compteurCrochetFerment = 0;
 				for(int k=i; k<chaine.length();k++) {
 					if(chaine.charAt(k) == ']') {
@@ -133,18 +131,14 @@ public class Parser {
 					return false;
 				}
 			}
-			//regarde si un c est suivi d'un de 0 ou 1 ou 2
-			if(chaine.charAt(i) == 'C') {
-				if(chaine.charAt(i+1) == '0' || chaine.charAt(i+1) =='1' || chaine.charAt(i+1) =='2') {
-					
-				}else {
-					System.out.println("Mauvaise couleur");
-					return false;
-				}
-			}
 		}
 		return true;
 	}
+
+	/**
+	 * Décide si la saisie de l'angle est correcte
+	 * @return true si la saisie de l'angle est correcte, false sinon
+	 */
 	public boolean isAngleCorrect(){
 		if(!Pattern.compile("(^\\-[0-9]+|^[0-9]+)(.[0-9]+)?$").matcher(this.angle).find()){
 			return false;
@@ -152,15 +146,32 @@ public class Parser {
 		return true;
 	}
 
+	/**
+	 * Décide si la saisie d'un nombre entier naturel est correcte
+	 * @param chaine Le String à tester
+	 * @return true si chaine est un nombre entier naturel, false sinon
+	 */
 	public boolean isANumberValid(String chaine){
 		if(!Pattern.compile("^[0-9]+$").matcher(chaine).find()){
 			return false;
 		}
 		return true;
 	}
+	/**
+	 * Décide si la saisie de la longueur est correcte
+	 * @return true si la saisie est un nombre entier naturel, false sinon
+	 */
 	public boolean isLongueurCorrect(){return this.isANumberValid(this.longueur);}
+	/**
+	 * Décide si la saisie du nombre d'itérations est correcte
+	 * @return true si la saisie est un nombre entier naturel, false sinon
+	 */
 	public boolean isIterationCorrect(){return this.isANumberValid(this.iteration);}
 
+	/**
+	 * Décide si les règles ont été bien saisies
+	 * @return true si la saisie est correcte, false sinon
+	 */
 	public boolean isRulesValid(){
 		if(this.rules.isEmpty()){
 			return true;
@@ -172,10 +183,10 @@ public class Parser {
 	}
 
 
-	
 
-		
-	
+
+
+
 }
 
 

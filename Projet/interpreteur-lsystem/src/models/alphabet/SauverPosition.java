@@ -3,7 +3,9 @@ package models.alphabet;
 import tortue.Tortue;
 
 import java.util.LinkedList;
-
+/**
+ * Classe représentant une restauration de position
+ */
 public class SauverPosition extends Symbole {
 
     private static final char REPRESENTATION_BASE = '[';

@@ -4,6 +4,7 @@
  */
 package views;
 
+import models.alphabet.Symbole;
 import models.system.LSystem;
 import models.system.Parser;
 import tortue.Point;
@@ -11,10 +12,13 @@ import tortue.Point;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.util.LinkedList;
 
 /**
  *
@@ -39,7 +43,7 @@ public class LeftPanel extends JPanel implements ActionListener {
     JPanel btnGroupPanel;
     GridBagConstraints gbc;
 
-    private final LSystem lsystem;
+    private LSystem lsystem;
     //Parser parser;
 
     public LeftPanel(LSystem lsystem) {
@@ -175,13 +179,15 @@ public class LeftPanel extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent event) {
         if (event.getSource().equals(this.btnReset)) {
             this.resetJTextField();
+            this.lsystem.setDeveloppement(new LinkedList<Symbole>());
         } else if (event.getSource().equals(this.btnSubmit)) {
             String chaineAxiome=this.txtAxiome.getText();
             String chaineAngle = this.txtAngle.getText();
             String chaineLongueur = this.txtLongueur.getText();
             String chaineIteration = this.txtNombreIterations.getText();
             String chaineRules=this.txtRegles.getText();
-             Parser parser=new Parser(chaineAxiome,chaineAngle,chaineLongueur,chaineIteration,chaineRules);
+            Parser parser=new Parser(chaineAxiome,chaineAngle,chaineLongueur,chaineIteration,chaineRules);
+
             if(parser.isValid()) {
                 this.lsystem.setNiveauGeneration(0);
                 this.lsystem.setDeveloppement(this.txtAxiome.getText());
@@ -201,7 +207,11 @@ public class LeftPanel extends JPanel implements ActionListener {
 //                this.lsystem.setPosDep(new Point(getWidth(),getWidth(),0));
                 //System.out.println(this.lsystem.representationRegles());
                 this.lsystem.repEtSuivant(Integer.parseInt(chaineIteration));
-                this.lsystem.initialisationRegles();
+                StringSelection textToCopy=new StringSelection(this.lsystem.developpementEnString());
+                Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+                clipboard.setContents(textToCopy,null);
+                JOptionPane.showMessageDialog(null,"Copié !","Nouvel axiome disponible",JOptionPane.INFORMATION_MESSAGE);
+
 
 
 

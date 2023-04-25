@@ -3,7 +3,9 @@ package tortue;
 import java.awt.*;
 import java.util.Stack;
 
-
+/**
+ * Classe représentant une tortue qui dessine
+ */
 public class Tortue implements InterfaceTortue{
 
 	private Point position;

@@ -4,10 +4,18 @@ import tortue.Tortue;
 
 import java.util.LinkedList;
 
+/**
+ * Classe représentant une sauvegarde de position
+ */
 public class RestaurerPosition extends Symbole {
 
     private static final Character REPRESENTATION_BASE = ']';
 
+    /**
+     * Créer une instance de Restaurerposition
+     * @param representation représentation du Symbole
+     * @param evolution liste de Symbole
+     */
     public RestaurerPosition(Character representation, LinkedList<Symbole> evolution) {
         super(representation, evolution);
     }

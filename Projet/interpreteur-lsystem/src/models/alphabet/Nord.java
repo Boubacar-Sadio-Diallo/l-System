@@ -2,10 +2,18 @@ package models.alphabet;
 
 import java.util.LinkedList;
 
+/**
+ * Classe représentant une rotation fixe vers le nord
+ */
 public class Nord extends Cardinaux {
     private static final Character REPRESENTATION_BASE = '^';
-    private static final double VALEUR_BASE = 90;
+    private static final double VALEUR_BASE = -90;
 
+    /**
+     * Crée une insatnce de Nord
+     * @param representation représentation du symbole
+     * @param evolution liste de Symbole
+     */
     public Nord(Character representation, LinkedList<Symbole> evolution) {
         super(representation, evolution, VALEUR_BASE);
         this.tourne = true;
@@ -20,15 +28,7 @@ public class Nord extends Cardinaux {
         this(REPRESENTATION_BASE, VALEUR_BASE);
     }
 
-    public Nord(Nord membre) {
-        this(membre.representation, membre.evolution);
-    }
 
-
-    @Override
-    public double getValeur() {
-        return super.getValeur();
-    }
     @Override
     public boolean equals(Object other) {
         return super.equals(other);

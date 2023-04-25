@@ -32,30 +32,24 @@ public class RightPanel extends JLabel {
     }
     protected void paintComponent(Graphics g2d) {
         super.paintComponent(g2d);
-//        g2d.setColor(Color.black);
-        StringBuilder plusAgreable= new StringBuilder();
-        int i = 0;
-        int j=0;
-        for (char c: lSystem.developpementEnString().toCharArray()) {
-            plusAgreable.append(c);
-            if(i%150==0 && i>1){
-                g2d.drawString(String.valueOf(plusAgreable),10,10+j);
-                plusAgreable =new StringBuilder();
-                j+=10;
-            }
-            i++;
-        }
-
+//      g2d.setColor(Color.GRAY);
+//        StringBuilder plusAgreable= new StringBuilder();
+//        int i = 0;
+//        int j=0;
+//        for (char c: lSystem.developpementEnString().toCharArray()) {
+//            plusAgreable.append(c);
+//            if(i%200==0 && i>1){
+//                g2d.drawString(String.valueOf(plusAgreable),10,10+j);
+//                plusAgreable =new StringBuilder();
+//                j+=10;
+//            }
+//            i++;
+//        }
+        g2d.setColor(Color.black);
         Tortue tortue = new Tortue(g2d);
-        tortue.setPosition(new Point(getWidth()/2,getHeight()/2, tortue.getAngle()));
+        tortue.setPosition(new Point(3*getWidth()/7,5*getHeight()/7, tortue.getAngle()));
         lSystem.dessiner(tortue);
-        //Graphics2D g2d = (Graphics2D) g;
 
-        //tortue.setPosition(new Point(200,800,0));
-
-        /*for(Symbole s:lSystem.getDeveloppement()){
-            s.seDessiner(tortue);
-        }*/
     }
 
 

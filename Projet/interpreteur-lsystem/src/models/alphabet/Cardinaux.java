@@ -3,10 +3,17 @@ package models.alphabet;
 import tortue.Tortue;
 
 import java.util.LinkedList;
-
+/**
+ * Classe abstraite représentant les classes qui ont une rotation fixe
+ */
 public abstract class Cardinaux extends Mouvement {
 
-
+    /**
+     * Instancie un Cardinaux
+     * @param representation caractère de représentation
+     * @param evolution liste de Symbole
+     * @param valeur angle de rotation
+     */
     public Cardinaux(Character representation, LinkedList<Symbole> evolution, double valeur) {
         super(representation, evolution, valeur);
     }
@@ -16,18 +23,15 @@ public abstract class Cardinaux extends Mouvement {
         this.valeur = valeur;
     }
 
+    /**
+     * Transmet l'instruction de tourner d'un angle
+     * @param tortue Tortue qui dessine
+     */
     @Override
     public void seDessiner(Tortue tortue) {
         tortue.tourner(valeur);
     }
 
-    public double getValeur() {
-        return this.valeur;
-    }
-
-    public void setValeur(double valeur) {
-        this.valeur = valeur;
-    }
     @Override
     public boolean equals(Object other) {
         return super.equals(other);
