@@ -28,6 +28,10 @@ public class RestaurerPosition extends Symbole {
         this(REPRESENTATION_BASE);
     }
 
+    /**
+     * Transmet à la tortue l'ordre de restaurer la dernière position sauvegardée
+     * @param tortue Tortue qui dessine
+     */
     @Override
     public void seDessiner(Tortue tortue) {
         tortue.restaurerPosition();

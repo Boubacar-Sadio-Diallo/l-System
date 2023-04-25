@@ -78,10 +78,11 @@ public class Parser {
 
 	/**
 	 * Décide si les caractères sont des caractères autorisés
-	 * @return true si les caractères saisies sont dans la liste des caractères autorisés, false sinon
+	 * @return true si les caractères saisis sont dans la liste des caractères autorisés, false sinon
 	 */
 	public boolean islexical() {
 		int cpt = 0;
+		//On regarde dans une liste prédéfinie si les caractères sont contenus dedans
 		for(int i = 0;i<chaine.length();i++) {
 			String c = "";
 			c = c + (chaine.charAt(i));

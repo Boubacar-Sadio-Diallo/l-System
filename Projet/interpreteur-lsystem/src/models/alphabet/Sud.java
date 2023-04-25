@@ -8,6 +8,11 @@ public class Sud extends Cardinaux {
     private static final Character REPRESENTATION_BASE = '&';
     private static final double VALEUR_BASE = 90;
 
+    /**
+     * Crée une instance de Sud
+     * @param representation représentation de Symbole
+     * @param evolution liste de Symbole
+     */
     public Sud(Character representation, LinkedList<Symbole> evolution) {
         super(representation, evolution, VALEUR_BASE);
         this.tourne = true;
@@ -25,10 +30,6 @@ public class Sud extends Cardinaux {
 
 
 
-    @Override
-    public double getValeur() {
-        return super.getValeur();
-    }
     @Override
     public boolean equals(Object other) {
         return super.equals(other);

@@ -7,6 +7,9 @@ import util.ModelEcoutable;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Vue contenant la partie gauche et la partie droite
+ */
 public class PrincipalView extends JPanel implements EcouteurModele {
     private LSystem lSystem;
     private LeftPanel leftPanel;

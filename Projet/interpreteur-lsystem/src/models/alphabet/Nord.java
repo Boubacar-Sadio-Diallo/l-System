@@ -10,7 +10,7 @@ public class Nord extends Cardinaux {
     private static final double VALEUR_BASE = -90;
 
     /**
-     * Crée une insatnce de Nord
+     * Crée une instance de Nord
      * @param representation représentation du symbole
      * @param evolution liste de Symbole
      */

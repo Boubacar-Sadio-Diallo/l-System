@@ -11,6 +11,12 @@ public class TournerSensTrigo extends Mouvement {
     private static final Character REPRESENTATION_BASE = '+';
     private static final double VALEUR_BASE = -90;
 
+    /**
+     * Crée une instance de TournerSensTrigo
+     * @param representation représentation du Symbole
+     * @param evolution liste de Symbole
+     * @param valeur angle de rotation
+     */
     public TournerSensTrigo(Character representation, LinkedList<Symbole> evolution, double valeur) {
         super(representation, evolution, valeur);
         //this.tourne=true;
@@ -29,7 +35,10 @@ public class TournerSensTrigo extends Mouvement {
         this(REPRESENTATION_BASE, valeur);
     }
 
-
+    /**
+     * Transmet l'instruction de tourner dans le sens trigonométrique à la tortue
+     * @param tortue Tortue qui dessine
+     */
     @Override
     public void seDessiner(Tortue tortue) {
         tortue.tourner(valeur);

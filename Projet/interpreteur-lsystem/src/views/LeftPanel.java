@@ -21,7 +21,7 @@ import java.awt.event.KeyEvent;
 import java.util.LinkedList;
 
 /**
- *
+ * Partie Graphique de paramétrage
  * @author ANTOINE
  */
 public class LeftPanel extends JPanel implements ActionListener {
@@ -192,7 +192,7 @@ public class LeftPanel extends JPanel implements ActionListener {
                 this.lsystem.setNiveauGeneration(0);
                 this.lsystem.setDeveloppement(this.txtAxiome.getText());
                 this.lsystem.setAngle(Double.parseDouble(this.txtAngle.getText()));
-                this.lsystem.setLongueur(Integer.parseInt(this.txtLongueur.getText()));
+                this.lsystem.setLongueur(Integer.parseInt(this.txtLongueur.getText())/Integer.parseInt(chaineIteration));
                 String[] chaqueRegle= chaineRules.split("\n");
                 for(String a : chaqueRegle){
                         if(a.length()!=0){
@@ -204,9 +204,9 @@ public class LeftPanel extends JPanel implements ActionListener {
                             }
                         }
                 }
-//                this.lsystem.setPosDep(new Point(getWidth(),getWidth(),0));
-                //System.out.println(this.lsystem.representationRegles());
+
                 this.lsystem.repEtSuivant(Integer.parseInt(chaineIteration));
+               //Copie dans le presse papier le nouveau développement
                 StringSelection textToCopy=new StringSelection(this.lsystem.developpementEnString());
                 Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
                 clipboard.setContents(textToCopy,null);

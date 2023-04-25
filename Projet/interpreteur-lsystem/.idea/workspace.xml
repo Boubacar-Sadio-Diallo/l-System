@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5bdff227-ba2a-4bfe-8a82-ade4133093c1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/execution/Demo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/alphabet/Avancer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/alphabet/Avancer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/alphabet/Cardinaux.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/alphabet/Cardinaux.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/alphabet/DemiTour.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/alphabet/DemiTour.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/alphabet/DessinerAvancer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/alphabet/DessinerAvancer.class" afterDir="false" />
@@ -21,22 +19,13 @@
       <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/alphabet/TournerSensTrigo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/alphabet/TournerSensTrigo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/system/LSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/system/LSystem.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/system/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/system/Parser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/tests/LSystemTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/tests/LSystemTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/tests/ParserTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/tests/ParserTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/tortue/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/tortue/Point.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/tortue/Tortue.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/tortue/Tortue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/views/LeftPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/views/LeftPanel$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/views/LeftPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/views/LeftPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/views/PrincipalView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/views/PrincipalView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/views/PrincipalViewGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/views/PrincipalViewGUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/views/RightPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/views/RightPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/execution/Demo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/alphabet/Avancer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/alphabet/Avancer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/alphabet/Cardinaux.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/alphabet/Cardinaux.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/alphabet/DemiTour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/alphabet/DemiTour.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/alphabet/DessinerAvancer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/alphabet/DessinerAvancer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/alphabet/Est.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/alphabet/Est.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/alphabet/Mouvement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/alphabet/Mouvement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/alphabet/Nord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/alphabet/Nord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/alphabet/Ouest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/alphabet/Ouest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/alphabet/RestaurerPosition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/alphabet/RestaurerPosition.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/alphabet/SauverPosition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/alphabet/SauverPosition.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/alphabet/Sud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/alphabet/Sud.java" afterDir="false" />
@@ -45,13 +34,11 @@
       <change beforePath="$PROJECT_DIR$/src/models/alphabet/TournerSensTrigo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/alphabet/TournerSensTrigo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/system/LSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/system/LSystem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/system/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/system/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/LSystemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/LSystemTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/ParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/ParserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tortue/Dessin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tortue/Dessin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tortue/InterfaceTortue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tortue/InterfaceTortue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tortue/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tortue/Point.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tortue/Tortue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tortue/Tortue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/LeftPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/LeftPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/PrincipalView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/PrincipalView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/PrincipalViewGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/PrincipalViewGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/RightPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/RightPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -125,7 +112,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.ParserTest.isSyntaxic">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="execution.Main" />
       <module name="interpreteur-lsystem" />
@@ -187,7 +174,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ParserTest.islexical" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ParserTest.isSyntaxic" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="interpreteur-lsystem" />
       <extension name="coverage">
         <pattern>
@@ -197,7 +184,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.ParserTest" />
-      <option name="METHOD_NAME" value="islexical" />
+      <option name="METHOD_NAME" value="isSyntaxic" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -205,11 +192,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ParserTest.isSyntaxic" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.ParserTest.isRulesValid" />
         <item itemvalue="JUnit.ParserTest.isANumberValid" />
         <item itemvalue="JUnit.ParserTest.isAngleCorrect" />
-        <item itemvalue="JUnit.ParserTest.islexical" />
       </list>
     </recent_temporary>
   </component>

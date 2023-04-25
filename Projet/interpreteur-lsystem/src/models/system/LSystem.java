@@ -42,7 +42,7 @@ public class LSystem extends AbstractModeleEcoutable {
 	 * @param longueur longueur de F et f (d'avancement)
 	 */
 	public void initialisationRegles(double angle,int longueur){
-
+	//Initialise les symboles de l'alphabet
 		DessinerAvancer dessinerAvancer = new DessinerAvancer(longueur);
 		Avancer avancer =new Avancer(longueur);
 
@@ -57,7 +57,7 @@ public class LSystem extends AbstractModeleEcoutable {
 		Est est = new Est();
 		Sud sud = new Sud();
 		Ouest ouest = new Ouest();
-
+//Créer une table de hachage permettant de regrouper l'alphabet
 		this.regles  = new HashMap<>();
 
 		this.regles.put(dessinerAvancer.getRepresentation(), dessinerAvancer);
@@ -136,6 +136,7 @@ public class LSystem extends AbstractModeleEcoutable {
 	 * @return un affichage en String des règles de réécritures
 	 */
 	public String representationRegles(){
+		//Construit la représentation avec un string builder
 		StringBuilder rep= new StringBuilder("Règles :\n");
 		for(Map.Entry<Character, Symbole> couple : this.regles.entrySet()){
 			rep.append(couple.getValue().evolutionRepresentation()).append("  /  ");
@@ -156,6 +157,7 @@ public class LSystem extends AbstractModeleEcoutable {
 	 * @param angle angle de rotation voulu
 	 */
 	public void setAngle(double angle) {
+		//Change dans les classes aussi
 		this.angle = angle;
 		TournerSensHoraire tournerSensHoraire = new TournerSensHoraire(angle);
 		TournerSensTrigo tournerSensTrigo = new TournerSensTrigo(-angle);
@@ -169,6 +171,7 @@ public class LSystem extends AbstractModeleEcoutable {
 	 * @param longueur longueur de trait voulu
 	 */
 	public void setLongueur(int longueur) {
+		//Change dans les classes aussi
 		this.longueur = longueur;
 		Avancer avancer=new Avancer(longueur);
 		DessinerAvancer dessinerAvancer =new DessinerAvancer(longueur);
@@ -195,16 +198,18 @@ public class LSystem extends AbstractModeleEcoutable {
 	 * @param charSymbAAjouter caractère du symbole qui deviendra la nouvelle évolution du symbole qui change
 	 */
 	public void changerRegleSymbole(Character charSymbQuiDoitChanger, Character charSymbAAjouter) {
+		//Symbole inconnu
 		if(!this.regles.containsKey(charSymbAAjouter)) {
 			this.ajoutSymbole(charSymbAAjouter);
 
 		}
+		//Symbole connu
 		if(!this.regles.containsKey(charSymbQuiDoitChanger)) {
 			this.ajoutSymbole(charSymbQuiDoitChanger);
 
 		}
 
-
+		//On change l'évolution ici
 		this.regles.get(charSymbQuiDoitChanger).setEvolution(this.regles.get(charSymbAAjouter));
 	}
 
@@ -216,9 +221,11 @@ public class LSystem extends AbstractModeleEcoutable {
 	public void ajoutRegleSymbole(Character charSymbQuiDoitChanger, Character charSymbAAjouter) {
 		Symbole s1=this.regles.get(charSymbAAjouter);
 		if(s1==null){
+			//Crée un Symbole avec le caractère qui était inconnu
 			s1=new Symbole(charSymbAAjouter);
 			this.regles.put(charSymbAAjouter,s1);
 		}
+		//Change l'évolution
 		Symbole s2=this.regles.get(charSymbQuiDoitChanger);
 		s2.addEvolution(s1);
 	}
@@ -252,11 +259,13 @@ public class LSystem extends AbstractModeleEcoutable {
 	 * @return Évolution du développement
 	 */
 	public LinkedList<Symbole> nextGeneration(int n) {
+		//Si n= 0 , pas de changement
 		if(n==0){
 			return this.developpement;
 		}
 		LinkedList<Symbole> prochain = new LinkedList<>();
 		LinkedList<Symbole> copy = new LinkedList<>(this.developpement);
+		//Ecris une linkedlist de Symbole qui est la n_ième itération de développement avec les règles du lsystem
 		for(int i=0;i<n;i++) {
 			prochain=new LinkedList<>();
 			for(Symbole membre : copy) {
@@ -288,7 +297,6 @@ public class LSystem extends AbstractModeleEcoutable {
 	 */
 	public void dessiner(Tortue tortue)  {
 
-		//LinkedList<Symbole> symboles = new LinkedList<>(this.developpement);
 		for(Symbole s:this.developpement){
 			s.seDessiner(tortue);
 		}
@@ -332,6 +340,7 @@ public class LSystem extends AbstractModeleEcoutable {
 	 */
 	public LinkedList<Symbole> stringEnLinkedList(String axiome){
 		LinkedList<Symbole> listeSymboles = new LinkedList<>();
+		// Pour chaque caractère dans le String, ajoute à la linkedList une instance du symbole correspondant au caractère
 		for (int i=0;i<axiome.length();i++){
 			Character c= axiome.charAt(i);
 			Symbole s;

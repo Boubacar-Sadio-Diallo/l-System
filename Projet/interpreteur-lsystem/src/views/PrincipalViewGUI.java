@@ -10,7 +10,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- *
+ * Instancie la vue
  * @author ANTOINE
  */
 public class PrincipalViewGUI extends JFrame {
@@ -18,12 +18,6 @@ public class PrincipalViewGUI extends JFrame {
     public PrincipalViewGUI(LSystem lSystem){
         this.lSystem=lSystem;
 
-        /*JPanel conteneur = new JPanel(new FlowLayout(FlowLayout.LEFT));
-//        panelGauche.setBackground(Color.WHITE);
-
-        conteneur.add(new LeftPanel(this.lSystem));
-        conteneur.add(new RightPanel(this.lSystem));
-        this.add(conteneur);*/
         PrincipalView principalView =new PrincipalView(this.lSystem);
         this.add(principalView);
 
