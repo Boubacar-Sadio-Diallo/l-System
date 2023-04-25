@@ -5,30 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5bdff227-ba2a-4bfe-8a82-ade4133093c1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/models/alphabet/Est.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interpreteur-lsystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/interpreteur-lsystem.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/execution/Demo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/execution/Demo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/alphabet/Avancer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/alphabet/Avancer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/alphabet/DessinerAvancer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/alphabet/DessinerAvancer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/system/LSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/system/LSystem.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/system/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/system/Parser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/tortue/Tortue.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/tortue/Tortue.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/views/RightPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/views/RightPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/execution/Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/execution/Demo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/execution/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/execution/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/alphabet/Avancer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/alphabet/Avancer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/alphabet/DessinerAvancer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/alphabet/DessinerAvancer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/alphabet/Mouvement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/alphabet/Mouvement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/alphabet/RestaurerPosition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/alphabet/RestaurerPosition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/alphabet/SauverPosition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/alphabet/SauverPosition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/alphabet/Symbole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/alphabet/Symbole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/alphabet/TournerSensHoraire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/alphabet/TournerSensHoraire.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/alphabet/TournerSensTrigo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/alphabet/TournerSensTrigo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/system/LSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/system/LSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/system/LSystemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/LSystemTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/system/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/system/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tortue/Tortue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tortue/Tortue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/ExamplePanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/ParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/ParserTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/LeftPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/LeftPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/RightPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/RightPanel.java" afterDir="false" />
     </list>
@@ -96,9 +83,16 @@
       <recent name="models.alphabet" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LSystemTest.nextGeneration">
-    <configuration name="Demo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="execution.Demo" />
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="AntRunConfiguration" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="execution.Main" />
       <module name="interpreteur-lsystem" />
       <extension name="coverage">
         <pattern>
@@ -110,65 +104,64 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LSystemTest.ajoutRegleSymbole" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LSystemTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="interpreteur-lsystem" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="models.system.*" />
+          <option name="PATTERN" value="tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="models.system" />
-      <option name="MAIN_CLASS_NAME" value="models.system.LSystemTest" />
-      <option name="METHOD_NAME" value="ajoutRegleSymbole" />
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.LSystemTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LSystemTest.affecterNextGenToDev" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="interpreteur-lsystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.LSystemTest" />
+      <option name="METHOD_NAME" value="affecterNextGenToDev" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LSystemTest.ajoutSymbole" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LSystemTest.setDeveloppement" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="interpreteur-lsystem" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="models.system.*" />
+          <option name="PATTERN" value="tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="models.system" />
-      <option name="MAIN_CLASS_NAME" value="models.system.LSystemTest" />
-      <option name="METHOD_NAME" value="ajoutSymbole" />
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.LSystemTest" />
+      <option name="METHOD_NAME" value="setDeveloppement" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LSystemTest.changerRegleSymbole" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LSystemTest.stringEnLinkedList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="interpreteur-lsystem" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="models.system.*" />
+          <option name="PATTERN" value="tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="models.system" />
-      <option name="MAIN_CLASS_NAME" value="models.system.LSystemTest" />
-      <option name="METHOD_NAME" value="changerRegleSymbole" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LSystemTest.nextGeneration" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="interpreteur-lsystem" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="models.system.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="models.system" />
-      <option name="MAIN_CLASS_NAME" value="models.system.LSystemTest" />
-      <option name="METHOD_NAME" value="nextGeneration" />
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.LSystemTest" />
+      <option name="METHOD_NAME" value="stringEnLinkedList" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -176,11 +169,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.LSystemTest.nextGeneration" />
-        <item itemvalue="JUnit.LSystemTest.ajoutRegleSymbole" />
-        <item itemvalue="JUnit.LSystemTest.changerRegleSymbole" />
-        <item itemvalue="Application.Demo" />
-        <item itemvalue="JUnit.LSystemTest.ajoutSymbole" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.LSystemTest.stringEnLinkedList" />
+        <item itemvalue="JUnit.LSystemTest" />
+        <item itemvalue="JUnit.LSystemTest.setDeveloppement" />
+        <item itemvalue="JUnit.LSystemTest.affecterNextGenToDev" />
       </list>
     </recent_temporary>
   </component>

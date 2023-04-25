@@ -36,7 +36,7 @@ public class Demo {
 			generat = generat.nextGeneration();
 			
 		}*/
-		LSystem lsystem = new LSystem(AutreevoluerTest,45);
+		LSystem lsystem = new LSystem(AutreevoluerTest,45,10);
 		System.out.println(lsystem.getRegles());
 		System.out.println(lsystem.getRegles().get('F').getEvolution());
         /*lsystem.ajoutRegleSymbole('F','F');

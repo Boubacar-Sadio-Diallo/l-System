@@ -1,6 +1,7 @@
-package models.system;
+package tests;
 
 import models.alphabet.*;
+import models.system.LSystem;
 import org.junit.jupiter.api.Test;
 
 import java.util.LinkedList;
@@ -66,15 +67,15 @@ class LSystemTest  {
         LSystem lSystem = new LSystem();
         lSystem.setDeveloppement("F");
         LinkedList<Symbole> axiome= lSystem.getDeveloppement();
-        assertEquals(axiome,lSystem.nextGeneration());
+        assertEquals(axiome,lSystem.nextGeneration(1));
 
         lSystem=new LSystem();
         lSystem.setDeveloppement("F");
         lSystem.changerRegleSymbole('F','f');
-        assertNotEquals(axiome,lSystem.nextGeneration());
+        assertNotEquals(axiome,lSystem.nextGeneration(1));
         axiome= new LinkedList<>();
         axiome.add(new Symbole('f'));
-        assertEquals(axiome,lSystem.nextGeneration());
+        assertEquals(axiome,lSystem.nextGeneration(1));
 
         lSystem=new LSystem();
         lSystem.setDeveloppement("F");
@@ -88,21 +89,11 @@ class LSystemTest  {
         assertNotEquals(axiome,lSystem.nextGeneration(11));
         assertNotEquals(axiome,lSystem.nextGeneration(22));
         axiome=new LinkedList<>();
-        DessinerAvancer s = new DessinerAvancer('F');
-        s.addEvolution(new Avancer('f'));
-        axiome.add(s);
+        axiome.add(lSystem.getRegles().get('F'));
         for (int i = 0; i <11 ; i++) {
-            axiome.add(new Symbole('f'));
+            axiome.add(lSystem.getRegles().get('f'));
         }
-        String repAxiome="";
-        for (Symbole symbole : axiome){
-            repAxiome+=symbole.getRepresentation();
-        }
-        String repNext="";
-        for (Symbole symbole : lSystem.nextGeneration(11)){
-            repNext+=symbole.getRepresentation();
-        }
-        assertEquals(repAxiome,repNext);
+        assertEquals(axiome,lSystem.nextGeneration(11));
 
 
 
@@ -111,33 +102,84 @@ class LSystemTest  {
 
     @Test
     void affecterNextGenToDev() {
+        LSystem lSystem = new LSystem();
+        lSystem.setDeveloppement("F");
+        lSystem.affecterNextGenToDev(1);
+        assertEquals(1,lSystem.getniveauGeneration());
+        LinkedList<Symbole> axiome = new LinkedList<>();
+        axiome.add(lSystem.getRegles().get('F'));
+        assertEquals(axiome,lSystem.getDeveloppement());
+
+        lSystem=new LSystem();
+        lSystem.setDeveloppement("F");
+        lSystem.ajoutRegleSymbole('F','f');
+        lSystem.affecterNextGenToDev(11);
+        assertNotEquals(axiome,lSystem.getDeveloppement());
+        axiome=new LinkedList<>();
+        axiome.add(lSystem.getRegles().get('F'));
+        for (int i = 0; i <11 ; i++) {
+            axiome.add(lSystem.getRegles().get('f'));
+        }
+        assertEquals(axiome,lSystem.getDeveloppement());
+
+
     }
 
 
-    @Test
-    void affecterRepresenter() {
-    }
-
-
-    @Test
-    void dessiner() {
-    }
 
     @Test
     void setDeveloppement() {
+        LSystem lSystem = new LSystem();
+        lSystem.setDeveloppement("F");
+        LinkedList<Symbole> test = new LinkedList<>();
+        test.add(lSystem.getRegles().get('F'));
+        assertEquals(test,lSystem.getDeveloppement());
+        lSystem = new LSystem();
+        test=new LinkedList<>();
+        String stringTest="Test+|-&Ff";
+        lSystem.setDeveloppement(stringTest);
+        char[] stringTestCharTab= stringTest.toCharArray();
+        for(char c : stringTestCharTab){
+            test.add(lSystem.getRegles().get(c));
+        }
+        assertEquals(test,lSystem.getDeveloppement());
     }
 
 
     @Test
     void developpementEnString() {
+        LSystem lSystem = new LSystem();
+        LinkedList<Symbole> axiome = new LinkedList<>();
+        axiome.add(lSystem.getRegles().get('F'));
+        lSystem.setDeveloppement(axiome);
+        assertEquals("F",lSystem.developpementEnString());
+        axiome.add(lSystem.getRegles().get('f'));
+        axiome.add(lSystem.getRegles().get('-'));
+        lSystem.setDeveloppement(axiome);
+        assertEquals("Ff-",lSystem.developpementEnString());
+
     }
 
     @Test
     void stringEnLinkedList() {
+        LSystem lSystem = new LSystem();
+        String string = "Ff+-|&<>^";
+        LinkedList<Symbole> test=new LinkedList<>();
+        char[] stringCharTab= string.toCharArray();
+        for(char c : stringCharTab){
+            test.add(lSystem.getRegles().get(c));
+        }
+        assertEquals(test,lSystem.stringEnLinkedList(string));
+        string="ABCabc";
+        test=new LinkedList<>();
+        stringCharTab= string.toCharArray();
+        for(char c : stringCharTab){
+            test.add(new Symbole(c));
+        }
+        assertEquals(test,lSystem.stringEnLinkedList(string));
+
     }
 
-    @Test
-    void repEtSuivant() {
-    }
+
 
 }

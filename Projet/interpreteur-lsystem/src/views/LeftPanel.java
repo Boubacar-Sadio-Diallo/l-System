@@ -94,15 +94,15 @@ public class LeftPanel extends JPanel implements ActionListener {
         this.labelLongueur = new JLabel(this.longueurString);
 
         // Initialisation des JTextFields et modification de leurs dimensions.
-        this.txtAxiome = new JTextField();
+        this.txtAxiome = new JTextField("X");
         this.txtAxiome.setPreferredSize(new Dimension(this.widthJTextField, this.heightJtextField));
-        this.txtAngle = new JTextField();
+        this.txtAngle = new JTextField("90");
         this.txtAngle.setPreferredSize(new Dimension(this.widthJTextField, this.heightJtextField));
-        this.txtRegles = new JTextArea();
+        this.txtRegles = new JTextArea("X=X");
         this.txtRegles.setPreferredSize(new Dimension(this.widthJTextField, 150));
-        this.txtNombreIterations = new JTextField();
+        this.txtNombreIterations = new JTextField("0");
         this.txtNombreIterations.setPreferredSize(new Dimension(this.widthJTextField, this.heightJtextField));
-        this.txtLongueur = new JTextField();
+        this.txtLongueur = new JTextField("10");
         this.txtLongueur.setPreferredSize(new Dimension(this.widthJTextField, this.heightJtextField));
 
         // Initialisation des JButtons
@@ -211,8 +211,7 @@ public class LeftPanel extends JPanel implements ActionListener {
                 this.lsystem.setNiveauGeneration(0);
                 this.lsystem.setDeveloppement(this.txtAxiome.getText());
                 this.lsystem.setAngle(Double.parseDouble(this.txtAngle.getText()));
-                System.out.println(this.lsystem.getAngle());
-                System.out.println(((Mouvement) this.lsystem.getRegles().get('+')).getValeur());
+                this.lsystem.setLongueur(Integer.parseInt(this.txtLongueur.getText()));
                 String[] chaqueRegle= chaineRules.split("\n");
                 for(String a : chaqueRegle){
                         if(a.length()!=0){
@@ -224,7 +223,6 @@ public class LeftPanel extends JPanel implements ActionListener {
                             }
                         }
                 }
-                System.out.println(this.lsystem.representationRegles());
                 this.lsystem.repEtSuivant(Integer.parseInt(chaineIteration));
 
 

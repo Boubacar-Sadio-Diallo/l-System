@@ -14,28 +14,28 @@ public class LSystem extends AbstractModeleEcoutable {
 	private LinkedList<Symbole> developpement;
 	private double angle;
 	private HashMap<Character, Symbole> regles;
-	private int niveauGeneration;
-	public static final int ANGLE_DFT=90;
+	private int niveauGeneration,longueur;
+	public static final double ANGLE_DFT=90;
+	public static final int LONGUEUR_DFT=10;
 
 
-	public LSystem(LinkedList<Symbole> developpement, double angle){
+	public LSystem(LinkedList<Symbole> developpement, double angle,int longueur){
 		this.developpement = developpement;
 		this.angle = angle;
 		this.niveauGeneration=0;
-		this.initialisationRegles(this.angle);
+		this.longueur=longueur;
+		this.initialisationRegles(this.angle,this.longueur);
 	}
-	private void initialisationRegles(double angle){
+	private void initialisationRegles(double angle,int longueur){
 
-		DessinerAvancer dessinerAvancer = new DessinerAvancer();
-		Avancer avancer =new Avancer();
+		DessinerAvancer dessinerAvancer = new DessinerAvancer(longueur);
+		Avancer avancer =new Avancer(longueur);
 
 		RestaurerPosition restaturerPosition = new RestaurerPosition();
 		SauverPosition sauverPosition = new SauverPosition();
 
-		TournerSensHoraire tournerSensHoraire = new TournerSensHoraire();
-		tournerSensHoraire.setValeur(angle);
-		TournerSensTrigo tournerSensTrigo = new TournerSensTrigo();
-		tournerSensTrigo.setValeur(-angle);
+		TournerSensHoraire tournerSensHoraire = new TournerSensHoraire(angle);
+		TournerSensTrigo tournerSensTrigo = new TournerSensTrigo(angle);
 
 		DemiTour demiTour = new DemiTour();
 		Nord nord = new Nord();
@@ -62,11 +62,11 @@ public class LSystem extends AbstractModeleEcoutable {
 	}
 
 	public LSystem(LinkedList<Symbole> developpement){
-		this(developpement,ANGLE_DFT);
+		this(developpement,ANGLE_DFT,LONGUEUR_DFT);
 	}
 
 	public LSystem(){
-		this(new LinkedList<Symbole>(),ANGLE_DFT);
+		this(new LinkedList<Symbole>(),ANGLE_DFT,LONGUEUR_DFT);
 	}
 
 	public int getNiveauGeneration() {
@@ -103,12 +103,19 @@ public class LSystem extends AbstractModeleEcoutable {
 
 	public void setAngle(double angle) {
 		this.angle = angle;
-		TournerSensHoraire tournerSensHoraire = new TournerSensHoraire();
-		tournerSensHoraire.setValeur(angle);
-		TournerSensTrigo tournerSensTrigo = new TournerSensTrigo();
-		tournerSensTrigo.setValeur(-angle);
+		TournerSensHoraire tournerSensHoraire = new TournerSensHoraire(angle);
+		TournerSensTrigo tournerSensTrigo = new TournerSensTrigo(angle);
 		this.regles.put(tournerSensHoraire.getRepresentation(), tournerSensHoraire);
 		this.regles.put(tournerSensTrigo.getRepresentation(), tournerSensTrigo);
+
+	}
+
+	public void setLongueur(int longueur) {
+		this.longueur = longueur;
+		Avancer avancer=new Avancer(longueur);
+		DessinerAvancer dessinerAvancer =new DessinerAvancer(longueur);
+		this.regles.put(dessinerAvancer.getRepresentation(), dessinerAvancer);
+		this.regles.put(avancer.getRepresentation(), avancer);
 
 	}
 
@@ -157,36 +164,19 @@ public class LSystem extends AbstractModeleEcoutable {
 		return chaine+"::";
 	}
 
-	public LinkedList<Symbole> nextGeneration() {
-		LinkedList<Symbole> prochain = new LinkedList<Symbole>();
-		for(Symbole membre : this.developpement) {
-			prochain.addAll(membre.getEvolution());
-		}
-		return prochain;
-	}
 
-	public void affecterNextGenToDev() {
-		this.developpement=this.nextGeneration();
-		this.niveauGeneration+=1;
-	}
 
-	public String representationNext() {
-		String chaine="::";
-		for(Symbole symbole : this.nextGeneration()) {
-			chaine+=symbole.toString()+" ";
-		}
-
-		return this.getniveauGeneration()+this.toString()+"\n"+ (this.getniveauGeneration()+1)+"\n"+chaine+"::";
-	}
 
 
 	public void affecterNextGenToDev(int n) {
-		this.nextGeneration(n);
 		this.niveauGeneration+=n;
-		this.developpement=nextGeneration(n);
+		this.developpement=this.nextGeneration(n);
 	}
 
 	public LinkedList<Symbole> nextGeneration(int n) {
+		if(n==0){
+			return this.developpement;
+		}
 		LinkedList<Symbole> prochain = new LinkedList<Symbole>();
 		LinkedList<Symbole> copy = new LinkedList<Symbole>();
 		copy.addAll(this.developpement);
@@ -206,7 +196,7 @@ public class LSystem extends AbstractModeleEcoutable {
 			chaine+=symbole.toString()+" ";
 		}
 
-		return this.getniveauGeneration()+this.toString()+"\n"+ (this.getniveauGeneration()+n)+"\n"+chaine+"::\n"+this.nextGeneration(n).size();
+		return this.getniveauGeneration()+this.toString()+"\n"+this.developpement.size()+" symboles\n"+ (this.getniveauGeneration()+n)+"\n"+chaine+"::\n"+this.nextGeneration(n).size()+" symboles";
 	}
 
 	public String affecterRepresenter(int n) {
@@ -215,11 +205,7 @@ public class LSystem extends AbstractModeleEcoutable {
 		return this.representationNext(n);
 	}
 
-	public String affecterRepresenter(){
-		this.affecterRepresenter();
-		this.fireChangement();
-		return this.representationNext();
-	}
+
 
 
 	public void dessiner(Tortue tortue)  {
@@ -233,14 +219,6 @@ public class LSystem extends AbstractModeleEcoutable {
 		while(it.hasNext()){
 			Symbole s = it.next();
 			s.seDessiner(tortue);
-		}*/
-		/*int batchSize=700;
-		for (int i = 0; i < this.developpement.size(); i += batchSize) {
-			int endIndex = Math.min(i + batchSize, this.developpement.size());
-			List<Symbole> batch = this.developpement.subList(i, endIndex);
-			for (Symbole symbole:batch) {
-				symbole.seDessiner(tortue);
-			}
 		}*/
 		ArrayList<Symbole> symboles = new ArrayList<Symbole>(this.developpement);
 		for(Symbole s:symboles){
@@ -283,10 +261,7 @@ public class LSystem extends AbstractModeleEcoutable {
 		return listeSymboles;
 	}
 
-	public void repEtSuivant(){
-		System.out.println(this.representationNext()+"\n");
-		this.affecterRepresenter();
-	}
+
 
 	public void repEtSuivant(int n){
 		System.out.println(this.representationNext(n));

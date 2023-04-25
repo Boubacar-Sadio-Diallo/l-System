@@ -66,7 +66,7 @@ public class Parser {
 		if(isRulesValid()==false){
 			return false;
 		}
-			System.out.println("tout bien écrit");
+			//System.out.println("tout bien écrit");
 		return true;
 	}
 	public boolean islexical() {

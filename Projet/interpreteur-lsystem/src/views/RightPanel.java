@@ -18,7 +18,7 @@ public class RightPanel extends JLabel {
     private LSystem lSystem;
     public RightPanel(LSystem lSystem) {
         this.lSystem=lSystem;
-        
+
         JLabel label = new JLabel("Mon panneau droit");
         this.add(label);
         
@@ -42,10 +42,13 @@ public class RightPanel extends JLabel {
             }
             i++;
         }
-        //Graphics2D g2d = (Graphics2D) g;
+
         Tortue tortue = new Tortue(g2d);
-        //tortue.setPosition(new Point(200,800,0));
         lSystem.dessiner(tortue);
+        //Graphics2D g2d = (Graphics2D) g;
+
+        //tortue.setPosition(new Point(200,800,0));
+
         /*for(Symbole s:lSystem.getDeveloppement()){
             s.seDessiner(tortue);
         }*/
