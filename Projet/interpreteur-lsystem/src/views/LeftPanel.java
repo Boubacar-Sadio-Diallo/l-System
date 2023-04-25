@@ -5,7 +5,8 @@
 package views;
 
 import models.alphabet.Mouvement;
-import models.system.*;
+import models.system.LSystem;
+import models.system.Parser;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;

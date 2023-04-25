@@ -1,9 +1,13 @@
 package models.system;
-import models.alphabet.*;
-import util.AbstractModeleEcoutable;
-import tortue.Tortue;
 
-import java.util.*;
+import models.alphabet.*;
+import tortue.Tortue;
+import util.AbstractModeleEcoutable;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Map;
 
 public class LSystem extends AbstractModeleEcoutable {
 
@@ -18,21 +22,43 @@ public class LSystem extends AbstractModeleEcoutable {
 		this.developpement = developpement;
 		this.angle = angle;
 		this.niveauGeneration=0;
+		this.initialisationRegles(this.angle);
+	}
+	private void initialisationRegles(double angle){
+
 		DessinerAvancer dessinerAvancer = new DessinerAvancer();
 		Avancer avancer =new Avancer();
+
 		RestaurerPosition restaturerPosition = new RestaurerPosition();
 		SauverPosition sauverPosition = new SauverPosition();
+
 		TournerSensHoraire tournerSensHoraire = new TournerSensHoraire();
 		tournerSensHoraire.setValeur(angle);
 		TournerSensTrigo tournerSensTrigo = new TournerSensTrigo();
 		tournerSensTrigo.setValeur(-angle);
+
+		DemiTour demiTour = new DemiTour();
+		Nord nord = new Nord();
+		Est est = new Est();
+		Sud sud = new Sud();
+		Ouest ouest = new Ouest();
+
 		this.regles  = new HashMap<Character, Symbole>();
+
 		this.regles.put(dessinerAvancer.getRepresentation(), dessinerAvancer);
 		this.regles.put(avancer.getRepresentation(), avancer);
+
 		this.regles.put(restaturerPosition.getRepresentation(), restaturerPosition);
 		this.regles.put(sauverPosition.getRepresentation(), sauverPosition);
+
 		this.regles.put(tournerSensHoraire.getRepresentation(), tournerSensHoraire);
 		this.regles.put(tournerSensTrigo.getRepresentation(), tournerSensTrigo);
+
+		this.regles.put(demiTour.getRepresentation(),demiTour);
+		this.regles.put(nord.getRepresentation(),nord);
+		this.regles.put(est.getRepresentation(),est);
+		this.regles.put(sud.getRepresentation(),sud);
+		this.regles.put(ouest.getRepresentation(),ouest);
 	}
 
 	public LSystem(LinkedList<Symbole> developpement){
@@ -112,53 +138,7 @@ public class LSystem extends AbstractModeleEcoutable {
 		this.regles.get(charSymbQuiDoitChanger).setEvolution(this.regles.get(charSymbAAjouter));
 	}
 
-	/*public void ajoutRegleSymbole(Character charSymbQuiDoitChanger, Character charSymbAAjouter) {
-        if (!this.regles.containsKey(charSymbAAjouter)) {
-            //System.out.println("donc contient");
-            this.ajoutSymbole(charSymbAAjouter);
-            try {
-                //	System.out.println(this.regles);
-                this.regles.get(charSymbQuiDoitChanger).addEvolution(this.regles.get(charSymbAAjouter).getClass().getConstructor(MembreAlpha.class).newInstance(this.regles.get(charSymbAAjouter)));
-                //System.out.println("eh la");
-            } catch (InstantiationException e) {
-                throw new RuntimeException(e);
-            } catch (IllegalAccessException e) {
-                throw new RuntimeException(e);
-            } catch (InvocationTargetException e) {
-                throw new RuntimeException(e);
-            } catch (NoSuchMethodException e) {
-                throw new RuntimeException(e);
-            }
 
-
-        } else if (charSymbAAjouter!='+'&&charSymbAAjouter!='-'&&charSymbAAjouter!=']'&&charSymbAAjouter!='['&&charSymbAAjouter!='f'&&charSymbAAjouter!='F') {
-            try {
-                //	System.out.println(this.regles);
-                this.regles.get(charSymbQuiDoitChanger).addEvolution(this.regles.get(charSymbAAjouter).getClass().getConstructor(MembreAlpha.class).newInstance(this.regles.get(charSymbAAjouter)));
-                //System.out.println("eh la");
-            } catch (InstantiationException e) {
-                throw new RuntimeException(e);
-            } catch (IllegalAccessException e) {
-                throw new RuntimeException(e);
-            } catch (InvocationTargetException e) {
-                throw new RuntimeException(e);
-            } catch (NoSuchMethodException e) {
-                throw new RuntimeException(e);
-            }
-
-        } else {
-            //System.out.println("donc contient pas");
-            try {
-            //	System.out.println(this.regles);
-                this.regles.get(charSymbQuiDoitChanger).addEvolution(this.regles.get(charSymbAAjouter).getClass().newInstance());
-                //System.out.println("eh la");
-            } catch (InstantiationException e) {
-                throw new RuntimeException(e);
-            } catch (IllegalAccessException e) {
-                throw new RuntimeException(e);
-            }
-        }
-    }*/
 	public void ajoutRegleSymbole(Character charSymbQuiDoitChanger, Character charSymbAAjouter) {
 		Symbole s1=this.regles.get(charSymbAAjouter);
 		if(s1==null){
@@ -242,18 +222,31 @@ public class LSystem extends AbstractModeleEcoutable {
 	}
 
 
-	public void dessiner(Tortue tortue) {
+	public void dessiner(Tortue tortue)  {
         /*Iterator<Symbole> it = this.developpement.iterator();
 		while(it.hasNext()){
 			Symbole s = it.next();
 			s.seDessiner(tortue);
 			it.remove();
 		}*/
-		ListIterator<Symbole> it = this.developpement.listIterator();
+        /*ListIterator<Symbole> it = this.developpement.listIterator();
 		while(it.hasNext()){
 			Symbole s = it.next();
 			s.seDessiner(tortue);
+		}*/
+		/*int batchSize=700;
+		for (int i = 0; i < this.developpement.size(); i += batchSize) {
+			int endIndex = Math.min(i + batchSize, this.developpement.size());
+			List<Symbole> batch = this.developpement.subList(i, endIndex);
+			for (Symbole symbole:batch) {
+				symbole.seDessiner(tortue);
+			}
+		}*/
+		ArrayList<Symbole> symboles = new ArrayList<Symbole>(this.developpement);
+		for(Symbole s:symboles){
+			s.seDessiner(tortue);
 		}
+
 
 	}
 

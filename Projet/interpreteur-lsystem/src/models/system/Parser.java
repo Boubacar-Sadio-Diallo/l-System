@@ -20,7 +20,7 @@ public class Parser {
 	private String longueur;
 	private String iteration;
 	private String rules;
-	private String charAutorise = "+-[]FfAZERTYUIOPQSDGHJKLMWXCVBNazertyuiopqsdghjklmwxcvbn";
+	private String charAutorise = "+-[]FfAZERTYUIOPQSDGHJKLMWXCVBNazertyuiopqsdghjklmwxcvbn|^<>&";
 	private String axiomeAutorises = "";
 	//public static final double DOUBLE_DFT=45;
 	public Parser(String chaine, String angle, String longueur,String iteration, String rules) {
@@ -165,7 +165,7 @@ public class Parser {
 		if(this.rules.isEmpty()){
 			return true;
 		}
-		if(!Pattern.compile("^[a-zA-Z\\+\\-\\[\\]]=[a-zA-Z\\+\\-\\[\\]]+").matcher(this.rules).find()){
+		if(!Pattern.compile("^[a-zA-Z\\+\\-\\[\\]\\|\\^\\<\\>\\&]=[a-zA-Z\\+\\-\\[\\]\\|\\^\\<\\>\\&]+").matcher(this.rules).find()){
 			return false;
 		}
 		return true;

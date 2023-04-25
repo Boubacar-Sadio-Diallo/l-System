@@ -4,21 +4,11 @@
  */
 package views;
 
-import models.alphabet.Symbole;
 import models.system.LSystem;
-import tortue.Point;
 import tortue.Tortue;
 
+import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import javax.swing.BorderFactory;
-import javax.swing.JLabel;
-import java.util.Queue;
 
 /**
  *
@@ -38,9 +28,21 @@ public class RightPanel extends JLabel {
 
         
     }
-    public void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        Graphics2D g2d = (Graphics2D) g;
+    public void paintComponent(Graphics g2d) {
+        super.paintComponent(g2d);
+        StringBuilder plusAgreable= new StringBuilder();
+        int i = 0;
+        int j=0;
+        for (char c: lSystem.developpementEnString().toCharArray()) {
+            plusAgreable.append(c);
+            if(i%150==0 && i>1){
+                g2d.drawString(String.valueOf(plusAgreable),10,10+j);
+                plusAgreable =new StringBuilder();
+                j+=10;
+            }
+            i++;
+        }
+        //Graphics2D g2d = (Graphics2D) g;
         Tortue tortue = new Tortue(g2d);
         //tortue.setPosition(new Point(200,800,0));
         lSystem.dessiner(tortue);

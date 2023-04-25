@@ -1,15 +1,16 @@
 package execution;
+
 import models.alphabet.Avancer;
-import models.system.LSystem;
 import models.alphabet.Symbole;
 import models.alphabet.TournerSensTrigo;
+import models.system.LSystem;
 
 import java.util.LinkedList;
 //import tortue.Tortue;
 public class Demo {
 
 	public static void main(String[] args) {
-		
+
 		Symbole effe = new Symbole('A');
 		//System.out.println(effe);
 		//System.out.println(effe.getEvolution());
@@ -28,7 +29,7 @@ public class Demo {
 		AutreevoluerTest.add(effe);
 		AutreevoluerTest.add(ava);
 		effe.setEvolution(AutreevoluerTest);
-		/*Generation generat=new Generation(testGene);
+        /*Generation generat=new Generation(testGene);
 		for(int i=0;i<3;i++) {
 			System.out.println(generat.representationNext()+"\n");
 			System.out.println(Generation.getCountGen());
@@ -38,7 +39,7 @@ public class Demo {
 		LSystem lsystem = new LSystem(AutreevoluerTest,45);
 		System.out.println(lsystem.getRegles());
 		System.out.println(lsystem.getRegles().get('F').getEvolution());
-		/*lsystem.ajoutRegleSymbole('F','F');
+        /*lsystem.ajoutRegleSymbole('F','F');
 		lsystem.ajoutRegleSymbole('F','F');
 		System.out.println(lsystem.getRegles().get('F').getEvolution());
 		System.out.println(lsystem.getRegles());
@@ -65,22 +66,27 @@ public class Demo {
 		System.out.println("\n\n ----------------------------------------------------- \n\n");
 		lsystem.repEtSuivant(3);
 		lsystem.repEtSuivant(6);
+		System.out.println(416.4%360);
 
-		/*System.out.println(lsystem.representationRegles()+"\n");
+		Symbole s1=new Symbole('+');
+		Symbole s2=new Symbole('+');
+		System.out.println(s1.equals(s2));
+
+        /*System.out.println(lsystem.representationRegles()+"\n");
 		lsystem.affecterNextGenToDev();
 		System.out.println(lsystem.representationRegles()+"\n");*/
 
-		/*for(int i=0;i<3;i++) {
+        /*for(int i=0;i<3;i++) {
 			System.out.println(lsystem.representationNext()+"\n");
 			lsystem.affecterNextGenToDev();
 		}*/
 
 		//System.out.println(lsystem.affecterRepresenter());
-		/*System.out.println(lsystem.representationNext());
+        /*System.out.println(lsystem.representationNext());
 		System.out.println(lsystem);
 		System.out.println(lsystem.developpementEnString());*/
-		
-		/*double nombre =4.4;
+
+        /*double nombre =4.4;
 		System.out.println("\n"+nombre);
 		System.out.println((float) nombre);
 		System.out.println((int) nombre);*/

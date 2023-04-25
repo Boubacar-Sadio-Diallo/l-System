@@ -5,7 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5bdff227-ba2a-4bfe-8a82-ade4133093c1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/models/alphabet/Est.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interpreteur-lsystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/interpreteur-lsystem.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/execution/Demo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/execution/Demo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/alphabet/Avancer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/alphabet/Avancer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/alphabet/DessinerAvancer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/alphabet/DessinerAvancer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/system/LSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/system/LSystem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/system/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/models/system/Parser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/tortue/Tortue.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/tortue/Tortue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/interpreteur-lsystem/views/RightPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/interpreteur-lsystem/views/RightPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/execution/Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/execution/Demo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/execution/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/execution/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/alphabet/Avancer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/alphabet/Avancer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/alphabet/DessinerAvancer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/alphabet/DessinerAvancer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/alphabet/Mouvement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/alphabet/Mouvement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/alphabet/RestaurerPosition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/alphabet/RestaurerPosition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/alphabet/SauverPosition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/alphabet/SauverPosition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/alphabet/Symbole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/alphabet/Symbole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/alphabet/TournerSensHoraire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/alphabet/TournerSensHoraire.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/alphabet/TournerSensTrigo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/alphabet/TournerSensTrigo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/system/LSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/system/LSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/system/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/system/Parser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tortue/Tortue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tortue/Tortue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/ExamplePanel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/LeftPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/LeftPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/RightPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/RightPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +44,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -28,6 +54,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
@@ -36,18 +65,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Damien&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/damie/Documents/Programmation/ProjetJava/interpreteur-de-l-systeme/Projet/interpreteur-lsystem&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
+    "git-widget-placeholder": "Damien",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/damie/Documents/Programmation/ProjetJava/interpreteur-de-l-systeme/Projet/interpreteur-lsystem",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
-}</component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="execution.Main" />
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="views" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="models.system" />
+      <recent name="views" />
+      <recent name="models.alphabet" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.LSystemTest.nextGeneration">
+    <configuration name="Demo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="execution.Demo" />
       <module name="interpreteur-lsystem" />
       <extension name="coverage">
         <pattern>
@@ -59,9 +110,77 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LSystemTest.ajoutRegleSymbole" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="interpreteur-lsystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="models.system.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="models.system" />
+      <option name="MAIN_CLASS_NAME" value="models.system.LSystemTest" />
+      <option name="METHOD_NAME" value="ajoutRegleSymbole" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LSystemTest.ajoutSymbole" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="interpreteur-lsystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="models.system.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="models.system" />
+      <option name="MAIN_CLASS_NAME" value="models.system.LSystemTest" />
+      <option name="METHOD_NAME" value="ajoutSymbole" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LSystemTest.changerRegleSymbole" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="interpreteur-lsystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="models.system.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="models.system" />
+      <option name="MAIN_CLASS_NAME" value="models.system.LSystemTest" />
+      <option name="METHOD_NAME" value="changerRegleSymbole" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LSystemTest.nextGeneration" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="interpreteur-lsystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="models.system.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="models.system" />
+      <option name="MAIN_CLASS_NAME" value="models.system.LSystemTest" />
+      <option name="METHOD_NAME" value="nextGeneration" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.LSystemTest.nextGeneration" />
+        <item itemvalue="JUnit.LSystemTest.ajoutRegleSymbole" />
+        <item itemvalue="JUnit.LSystemTest.changerRegleSymbole" />
+        <item itemvalue="Application.Demo" />
+        <item itemvalue="JUnit.LSystemTest.ajoutSymbole" />
       </list>
     </recent_temporary>
   </component>
@@ -81,10 +200,24 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/interpreteur_lsystem$LSystemTest_setAngle.ic" NAME="LSystemTest.setAngle Coverage Results" MODIFIED="1682375248042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>models.system.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/interpreteur_lsystem$CardinauxTest.ic" NAME="CardinauxTest Coverage Results" MODIFIED="1682373348504" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>models.alphabet.*</FILTER>
+    </SUITE>
   </component>
 </project>
