@@ -5,6 +5,7 @@
 package views;
 
 import models.system.LSystem;
+import tortue.Point;
 import tortue.Tortue;
 
 import javax.swing.*;
@@ -19,17 +20,19 @@ public class RightPanel extends JLabel {
     public RightPanel(LSystem lSystem) {
         this.lSystem=lSystem;
 
-        JLabel label = new JLabel("Mon panneau droit");
-        this.add(label);
-        
-        this.setBackground(Color.BLACK);
-        this.setPreferredSize(new Dimension(1200, 1000));
+
+        /*JLabel label = new JLabel("Mon panneau droit");
+        this.add(label);*/
+
+        //this.setBackground(Color.BLACK);
+        this.setPreferredSize(new Dimension(1200, 950));
         this.setBorder(BorderFactory.createLineBorder(Color.black));
 
         
     }
-    public void paintComponent(Graphics g2d) {
+    protected void paintComponent(Graphics g2d) {
         super.paintComponent(g2d);
+//        g2d.setColor(Color.black);
         StringBuilder plusAgreable= new StringBuilder();
         int i = 0;
         int j=0;
@@ -44,6 +47,7 @@ public class RightPanel extends JLabel {
         }
 
         Tortue tortue = new Tortue(g2d);
+        tortue.setPosition(new Point(getWidth()/2,getHeight()/2, tortue.getAngle()));
         lSystem.dessiner(tortue);
         //Graphics2D g2d = (Graphics2D) g;
 

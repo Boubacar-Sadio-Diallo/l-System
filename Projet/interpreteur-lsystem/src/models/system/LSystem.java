@@ -9,6 +9,10 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
 
+/**
+ * @author Maris Damien
+ * Classe représentant un LSystem
+ */
 public class LSystem extends AbstractModeleEcoutable {
 
 	private LinkedList<Symbole> developpement;
@@ -26,7 +30,7 @@ public class LSystem extends AbstractModeleEcoutable {
 		this.longueur=longueur;
 		this.initialisationRegles(this.angle,this.longueur);
 	}
-	private void initialisationRegles(double angle,int longueur){
+	public void initialisationRegles(double angle,int longueur){
 
 		DessinerAvancer dessinerAvancer = new DessinerAvancer(longueur);
 		Avancer avancer =new Avancer(longueur);
@@ -35,7 +39,7 @@ public class LSystem extends AbstractModeleEcoutable {
 		SauverPosition sauverPosition = new SauverPosition();
 
 		TournerSensHoraire tournerSensHoraire = new TournerSensHoraire(angle);
-		TournerSensTrigo tournerSensTrigo = new TournerSensTrigo(angle);
+		TournerSensTrigo tournerSensTrigo = new TournerSensTrigo(-angle);
 
 		DemiTour demiTour = new DemiTour();
 		Nord nord = new Nord();
@@ -43,7 +47,7 @@ public class LSystem extends AbstractModeleEcoutable {
 		Sud sud = new Sud();
 		Ouest ouest = new Ouest();
 
-		this.regles  = new HashMap<Character, Symbole>();
+		this.regles  = new HashMap<>();
 
 		this.regles.put(dessinerAvancer.getRepresentation(), dessinerAvancer);
 		this.regles.put(avancer.getRepresentation(), avancer);
@@ -60,13 +64,16 @@ public class LSystem extends AbstractModeleEcoutable {
 		this.regles.put(sud.getRepresentation(),sud);
 		this.regles.put(ouest.getRepresentation(),ouest);
 	}
+	public void initialisationRegles(){
+		this.initialisationRegles(this.angle,this.longueur);
+	}
 
 	public LSystem(LinkedList<Symbole> developpement){
 		this(developpement,ANGLE_DFT,LONGUEUR_DFT);
 	}
 
 	public LSystem(){
-		this(new LinkedList<Symbole>(),ANGLE_DFT,LONGUEUR_DFT);
+		this(new LinkedList<>(),ANGLE_DFT,LONGUEUR_DFT);
 	}
 
 	public int getNiveauGeneration() {
@@ -90,11 +97,11 @@ public class LSystem extends AbstractModeleEcoutable {
 	}
 
 	public String representationRegles(){
-		String rep="Règles :\n";
+		StringBuilder rep= new StringBuilder("Règles :\n");
 		for(Map.Entry<Character, Symbole> couple : this.regles.entrySet()){
-			rep+=couple.getValue().evolutionRepresentation()+"  /  ";
+			rep.append(couple.getValue().evolutionRepresentation()).append("  /  ");
 		}
-		return rep;
+		return rep.toString();
 	}
 
 	public int getniveauGeneration() {
@@ -104,7 +111,7 @@ public class LSystem extends AbstractModeleEcoutable {
 	public void setAngle(double angle) {
 		this.angle = angle;
 		TournerSensHoraire tournerSensHoraire = new TournerSensHoraire(angle);
-		TournerSensTrigo tournerSensTrigo = new TournerSensTrigo(angle);
+		TournerSensTrigo tournerSensTrigo = new TournerSensTrigo(-angle);
 		this.regles.put(tournerSensHoraire.getRepresentation(), tournerSensHoraire);
 		this.regles.put(tournerSensTrigo.getRepresentation(), tournerSensTrigo);
 
@@ -126,22 +133,22 @@ public class LSystem extends AbstractModeleEcoutable {
 
 	public void ajoutSymbole(Character character) {
 		Symbole nouveauSymbole = new Symbole(character);
-		//System.out.println("création bonne");
+
 		this.regles.put(character, nouveauSymbole);
-		//System.out.println(this.regles);
+
 	}
 
 	public void changerRegleSymbole(Character charSymbQuiDoitChanger, Character charSymbAAjouter) {
 		if(!this.regles.containsKey(charSymbAAjouter)) {
 			this.ajoutSymbole(charSymbAAjouter);
-			//System.out.println("fait");
+
 		}
 		if(!this.regles.containsKey(charSymbQuiDoitChanger)) {
 			this.ajoutSymbole(charSymbQuiDoitChanger);
-			//System.out.println("fait");
+
 		}
-		//this.regles.put(charSymbQuiDoitChanger,this.regles.get(charSymbQuiDoitChanger).setEvolution(this.regles.get(charSymbAAjouter)));
-		System.out.println(this.regles.get(charSymbAAjouter));
+
+
 		this.regles.get(charSymbQuiDoitChanger).setEvolution(this.regles.get(charSymbAAjouter));
 	}
 
@@ -157,9 +164,9 @@ public class LSystem extends AbstractModeleEcoutable {
 	}
 
 	public String toString() {
-		String chaine="\n::";
+		StringBuilder chaine= new StringBuilder("\n::");
 		for (Symbole symbole : this.developpement) {
-			chaine+=symbole.toString()+" ";
+			chaine.append(symbole.toString()).append(" ");
 		}
 		return chaine+"::";
 	}
@@ -177,11 +184,10 @@ public class LSystem extends AbstractModeleEcoutable {
 		if(n==0){
 			return this.developpement;
 		}
-		LinkedList<Symbole> prochain = new LinkedList<Symbole>();
-		LinkedList<Symbole> copy = new LinkedList<Symbole>();
-		copy.addAll(this.developpement);
+		LinkedList<Symbole> prochain = new LinkedList<>();
+		LinkedList<Symbole> copy = new LinkedList<>(this.developpement);
 		for(int i=0;i<n;i++) {
-			prochain=new LinkedList<Symbole>();
+			prochain=new LinkedList<>();
 			for(Symbole membre : copy) {
 				prochain.addAll(membre.getEvolution());
 			}
@@ -191,36 +197,26 @@ public class LSystem extends AbstractModeleEcoutable {
 	}
 
 	public String representationNext(int n) {
-		String chaine="::";
+		StringBuilder chaine= new StringBuilder("::");
 		for(Symbole symbole : this.nextGeneration(n)) {
-			chaine+=symbole.toString()+" ";
+			chaine.append(symbole.toString()).append(" ");
 		}
 
-		return this.getniveauGeneration()+this.toString()+"\n"+this.developpement.size()+" symboles\n"+ (this.getniveauGeneration()+n)+"\n"+chaine+"::\n"+this.nextGeneration(n).size()+" symboles";
+		return this.getniveauGeneration()+this.toString()+"\n"+this.developpement.size()+" symboles\n\n"+ (this.getniveauGeneration()+n)+"\n"+chaine+"::\n"+this.nextGeneration(n).size()+" symboles";
 	}
 
-	public String affecterRepresenter(int n) {
+	public void affecterRepresenter(int n) {
 		this.affecterNextGenToDev(n);
 		this.fireChangement();
-		return this.representationNext(n);
+		//this.representationNext(n);
 	}
 
 
 
 
 	public void dessiner(Tortue tortue)  {
-        /*Iterator<Symbole> it = this.developpement.iterator();
-		while(it.hasNext()){
-			Symbole s = it.next();
-			s.seDessiner(tortue);
-			it.remove();
-		}*/
-        /*ListIterator<Symbole> it = this.developpement.listIterator();
-		while(it.hasNext()){
-			Symbole s = it.next();
-			s.seDessiner(tortue);
-		}*/
-		ArrayList<Symbole> symboles = new ArrayList<Symbole>(this.developpement);
+
+		ArrayList<Symbole> symboles = new ArrayList<>(this.developpement);
 		for(Symbole s:symboles){
 			s.seDessiner(tortue);
 		}
@@ -237,16 +233,16 @@ public class LSystem extends AbstractModeleEcoutable {
 	}
 
 	public String developpementEnString(){
-		String representation="";
+		StringBuilder representation= new StringBuilder();
 		for (Symbole symbole:this.developpement
 		) {
-			representation+=symbole.getRepresentation();
+			representation.append(symbole.getRepresentation());
 		}
-		return representation;
+		return representation.toString();
 	}
 
 	public LinkedList<Symbole> stringEnLinkedList(String axiome){
-		LinkedList<Symbole> listeSymboles = new LinkedList<Symbole>();
+		LinkedList<Symbole> listeSymboles = new LinkedList<>();
 		for (int i=0;i<axiome.length();i++){
 			Character c= axiome.charAt(i);
 			Symbole s;

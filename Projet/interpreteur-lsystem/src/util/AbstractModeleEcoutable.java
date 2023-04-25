@@ -20,7 +20,7 @@ public abstract class AbstractModeleEcoutable implements ModelEcoutable {
     }
 
     public AbstractModeleEcoutable() {
-        this(new ArrayList());
+        this(new ArrayList<>());
     }
 
     @Override

@@ -3,7 +3,6 @@ package models.alphabet;
 import tortue.Dessin;
 import tortue.Tortue;
 
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Objects;
 
@@ -19,15 +18,11 @@ public class Symbole implements Dessin {
     }
 
     public Symbole(Character representation) {
-        this(representation, new LinkedList<Symbole>());
+        this(representation, new LinkedList<>());
         this.evolution.add(this);
     }
 
-    public Symbole(Symbole membre) {
-        this.representation = membre.representation;
-        this.evolution = membre.evolution;
-        this.dessine = membre.dessine;
-    }
+
 
     public Character getRepresentation() {
         return representation;
@@ -55,7 +50,7 @@ public class Symbole implements Dessin {
     }
 
     public void setEvolution(Symbole membreEvolution) {
-        LinkedList<Symbole> evolution2 = new LinkedList<Symbole>();
+        LinkedList<Symbole> evolution2 = new LinkedList<>();
         evolution2.add(membreEvolution);
         this.evolution = evolution2;
     }
@@ -77,11 +72,11 @@ public class Symbole implements Dessin {
     }
 
     public String evolutionRepresentation() {
-        String rep = this.getRepresentation() + "=";
+        StringBuilder rep = new StringBuilder(this.getRepresentation() + "=");
         for (Symbole membre : this.evolution) {
-            rep += membre.getRepresentation();
+            rep.append(membre.getRepresentation());
         }
-        return rep;
+        return rep.toString();
     }
 
 

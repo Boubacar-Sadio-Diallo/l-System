@@ -4,9 +4,9 @@
  */
 package views;
 
-import models.alphabet.Mouvement;
 import models.system.LSystem;
 import models.system.Parser;
+import tortue.Point;
 
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
@@ -22,59 +22,34 @@ import java.awt.event.KeyEvent;
  */
 public class LeftPanel extends JPanel implements ActionListener {
 
-    private String axiomeString;
-    private String angleString;
-    private String reglesString;
-    private String nombreIterationsString;
-    private String longueurString;
-    private String submitString;
-    private String resetString;
-    private int widthJTextField;
-    private int heightJtextField;
+    private static final int WIDTH_EDITFIELD = 310;
+    private static final int HEIGHT_EDITFIELD = 30;
 
-    private static final int WIDTH_JTEXTFIELD = 310;
-    private static final int HEIGHT_JTEXTFIELD = 30;
+    private final JTextField txtAxiome;
+    private final JTextField txtAngle;
+    private final JTextArea txtRegles;
+    private final JTextField txtNombreIterations;
+    private final JTextField txtLongueur;
 
-    private JLabel labelAxiome;
-    private JLabel labelAngle;
-    private JLabel labelRegles;
-    private JLabel labelNombreIterations;
-    private JLabel labelLongueur;
-
-    private JTextField txtAxiome;
-    private JTextField txtAngle;
-    private JTextArea txtRegles;
-    private JTextField txtNombreIterations;
-    private JTextField txtLongueur;
-
-    private JButton btnSubmit;
-    private JButton btnReset;
+    private final JButton btnSubmit;
+    private final JButton btnReset;
 
     JPanel panelForm;
     JPanel panelContents;
     JPanel btnGroupPanel;
     GridBagConstraints gbc;
 
-    private LSystem lsystem;
+    private final LSystem lsystem;
     //Parser parser;
 
     public LeftPanel(LSystem lsystem) {
-        this("Axiome:", "Angle:", "Règles:", "Itération(s):", "Longueur:", "Dessiner", "Reinitialiser", WIDTH_JTEXTFIELD, HEIGHT_JTEXTFIELD, lsystem);
+        this("Axiome:", "Angle:", "Règles:", "Itération(s):", "Longueur:", "Dessiner", "Reinitialiser", WIDTH_EDITFIELD, HEIGHT_EDITFIELD, lsystem);
     }
 
     public LeftPanel(String axiomeString, String angleString, String reglesString, String nombreIterationsString, String longueurString, String submitString, String resetString, int widthJTextField, int heightJtextField,LSystem lsystem) {
         /*DEBUT INITIALISATION*/
         // Initialisation des variables
         this.lsystem=lsystem;
-        this.axiomeString = axiomeString;
-        this.angleString = angleString;
-        this.reglesString = reglesString;
-        this.nombreIterationsString = nombreIterationsString;
-        this.longueurString = longueurString;
-        this.submitString = submitString;
-        this.resetString = resetString;
-        this.widthJTextField = widthJTextField;
-        this.heightJtextField = heightJtextField;
 
         // Initialisation des JPanels
         this.panelForm = new JPanel();
@@ -87,27 +62,27 @@ public class LeftPanel extends JPanel implements ActionListener {
         this.gbc = new GridBagConstraints();
 
         // Initialisation des JLabels
-        this.labelAxiome = new JLabel(this.axiomeString);
-        this.labelAngle = new JLabel(this.angleString);
-        this.labelRegles = new JLabel(this.reglesString);
-        this.labelNombreIterations = new JLabel(this.nombreIterationsString);
-        this.labelLongueur = new JLabel(this.longueurString);
+        JLabel labelAxiome = new JLabel(axiomeString);
+        JLabel labelAngle = new JLabel(angleString);
+        JLabel labelRegles = new JLabel(reglesString);
+        JLabel labelNombreIterations = new JLabel(nombreIterationsString);
+        JLabel labelLongueur = new JLabel(longueurString);
 
         // Initialisation des JTextFields et modification de leurs dimensions.
-        this.txtAxiome = new JTextField("X");
-        this.txtAxiome.setPreferredSize(new Dimension(this.widthJTextField, this.heightJtextField));
-        this.txtAngle = new JTextField("90");
-        this.txtAngle.setPreferredSize(new Dimension(this.widthJTextField, this.heightJtextField));
-        this.txtRegles = new JTextArea("X=X");
-        this.txtRegles.setPreferredSize(new Dimension(this.widthJTextField, 150));
-        this.txtNombreIterations = new JTextField("0");
-        this.txtNombreIterations.setPreferredSize(new Dimension(this.widthJTextField, this.heightJtextField));
-        this.txtLongueur = new JTextField("10");
-        this.txtLongueur.setPreferredSize(new Dimension(this.widthJTextField, this.heightJtextField));
+        this.txtAxiome = new JTextField(null);
+        this.txtAxiome.setPreferredSize(new Dimension(widthJTextField, heightJtextField));
+        this.txtAngle = new JTextField(null);
+        this.txtAngle.setPreferredSize(new Dimension(widthJTextField, heightJtextField));
+        this.txtRegles = new JTextArea("");
+        this.txtRegles.setPreferredSize(new Dimension(widthJTextField, 150));
+        this.txtNombreIterations = new JTextField(null);
+        this.txtNombreIterations.setPreferredSize(new Dimension(widthJTextField, heightJtextField));
+        this.txtLongueur = new JTextField(null);
+        this.txtLongueur.setPreferredSize(new Dimension(widthJTextField, heightJtextField));
 
         // Initialisation des JButtons
-        this.btnSubmit = new JButton(this.submitString);
-        this.btnReset = new JButton(this.resetString);
+        this.btnSubmit = new JButton(submitString);
+        this.btnReset = new JButton(resetString);
 
         this.btnSubmit.addKeyListener(new KeyAdapter() {
             @Override
@@ -125,24 +100,24 @@ public class LeftPanel extends JPanel implements ActionListener {
         // Ajout des JLabels dans le panelContents
         gbc.gridx = 0;
         gbc.gridy = 1;
-        panelContents.add(this.labelAxiome, gbc);
+        panelContents.add(labelAxiome, gbc);
 
         gbc.gridx = 0;
         gbc.gridy = 2;
-        panelContents.add(this.labelAngle, gbc);
+        panelContents.add(labelAngle, gbc);
 
         gbc.gridx = 0;
         gbc.gridy = 3;
-        panelContents.add(this.labelRegles, gbc);
+        panelContents.add(labelRegles, gbc);
         this.txtRegles.setBorder(BorderFactory.createLineBorder(Color.gray));
 
         gbc.gridx = 0;
         gbc.gridy = 4;
-        panelContents.add(this.labelNombreIterations, gbc);
+        panelContents.add(labelNombreIterations, gbc);
 
         gbc.gridx = 0;
         gbc.gridy = 5;
-        panelContents.add(this.labelLongueur, gbc);
+        panelContents.add(labelLongueur, gbc);
 
         // Ajout des JTextFields dans le panelContents
         gbc.gridx = 1;
@@ -165,7 +140,7 @@ public class LeftPanel extends JPanel implements ActionListener {
         gbc.gridy = 5;
         panelContents.add(this.txtLongueur, gbc);
 
-        // Ajout des evenements(actions) aux boutons
+        // Ajout des événements (actions) aux boutons
         this.btnSubmit.addActionListener(this);
         this.btnReset.addActionListener(this);
 
@@ -223,7 +198,10 @@ public class LeftPanel extends JPanel implements ActionListener {
                             }
                         }
                 }
+//                this.lsystem.setPosDep(new Point(getWidth(),getWidth(),0));
+                //System.out.println(this.lsystem.representationRegles());
                 this.lsystem.repEtSuivant(Integer.parseInt(chaineIteration));
+                this.lsystem.initialisationRegles();
 
 
 
