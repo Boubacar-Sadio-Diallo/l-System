@@ -16,9 +16,11 @@ public class PrincipalView extends JPanel implements EcouteurModele {
     private RightPanel rightPanel;
     public PrincipalView(LSystem lSystem){
         this.lSystem=lSystem;
+        this.lSystem.ajouterEcouteur(this);
         this.setLayout(new FlowLayout((FlowLayout.LEFT)));
         this.leftPanel=new LeftPanel(lSystem);
         this.rightPanel=new RightPanel(lSystem);
+
 
         this.add(this.leftPanel);
         this.add(this.rightPanel);

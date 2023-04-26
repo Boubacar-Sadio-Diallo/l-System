@@ -7,7 +7,7 @@ import java.util.LinkedList;
  */
 public class Nord extends Cardinaux {
     private static final Character REPRESENTATION_BASE = '^';
-    private static final double VALEUR_BASE = -90;
+    private static final double VALEUR_BASE = 270;
 
     /**
      * Crée une instance de Nord

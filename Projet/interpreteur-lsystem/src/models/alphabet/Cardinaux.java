@@ -29,7 +29,7 @@ public abstract class Cardinaux extends Mouvement {
      */
     @Override
     public void seDessiner(Tortue tortue) {
-        tortue.tourner(valeur);
+        tortue.setAngle(valeur);
     }
 
     @Override

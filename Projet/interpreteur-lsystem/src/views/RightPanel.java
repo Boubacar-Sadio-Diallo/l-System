@@ -20,7 +20,7 @@ public class RightPanel extends JLabel {
     public RightPanel(LSystem lSystem) {
         this.lSystem=lSystem;
 
-        this.setPreferredSize(new Dimension(1200, 950));
+        this.setPreferredSize(new Dimension(1000, 950));
         this.setBorder(BorderFactory.createLineBorder(Color.black));
 
         
@@ -30,7 +30,7 @@ public class RightPanel extends JLabel {
 
         g2d.setColor(Color.black);
         Tortue tortue = new Tortue(g2d);
-        tortue.setPosition(new Point(2*getWidth()/7,6*getHeight()/7, tortue.getAngle()));
+        tortue.setPosition(new Point(getWidth()/2,getHeight()/2, tortue.getAngle()));
         lSystem.dessiner(tortue);
 
     }
