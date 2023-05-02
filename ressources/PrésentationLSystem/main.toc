@@ -1,0 +1,13 @@
+\babel@toc {french}{}\relax 
+\beamer@sectionintoc {1}{Aperçu du produit final}{3}{0}{1}
+\beamer@sectionintoc {2}{Conception}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{Alphabétisation}{5}{0}{2}
+\beamer@subsubsectionintoc {2}{1}{1}{Notre alphabet}{5}{0}{2}
+\beamer@subsubsectionintoc {2}{1}{2}{Ses classes dérivées}{6}{0}{2}
+\beamer@subsectionintoc {2}{2}{Tortue}{8}{0}{2}
+\beamer@subsectionintoc {2}{3}{La classe L-Système}{10}{0}{2}
+\beamer@subsectionintoc {2}{4}{Interface Graphique}{11}{0}{2}
+\beamer@sectionintoc {3}{Exemples}{13}{0}{3}
+\beamer@subsectionintoc {3}{1}{Quelques Résultats}{13}{0}{3}
+\beamer@subsectionintoc {3}{2}{Démonstration}{14}{0}{3}
+\beamer@sectionintoc {4}{Conclusion}{15}{0}{4}

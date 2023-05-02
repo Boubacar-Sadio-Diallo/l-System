@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.2.15)  26 APR 2023 09:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.2.15)  2 MAY 2023 13:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -601,12 +601,18 @@ le _ 4 : _Koch _ curve$[] \T1/cmr/m/n/12 et []$\T1/cmtt/m/n/12 https :
  []
 
 [12 <./images/AutreArbre.png>] [13] (rapport.aux)
-Package rerunfilecheck Info: File `rapport.out' has not changed.
-(rerunfilecheck)             Checksum: 638C12A03533533659830EBFE60CC3AB;5391.
+
+Package rerunfilecheck Warning: File `rapport.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `rapport.out':
+(rerunfilecheck)             Before: D9BD02B0B4A060A573D69CBDAEBFBC18;5418
+(rerunfilecheck)             After:  638C12A03533533659830EBFE60CC3AB;5391.
  ) 
 Here is how much of TeX's memory you used:
  14141 strings out of 476336
- 224476 string characters out of 5787153
+ 224448 string characters out of 5787153
  1860340 words of memory out of 5000000
  34289 multiletter control sequences out of 15000+600000
  526708 words of font info for 63 fonts, out of 8000000 for 9000
